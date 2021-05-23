@@ -25,7 +25,7 @@ h1 {
 /* ----------- hover effect */
 
 .effect {
-  color: rgb(170, 170, 170);
+  color: rgb(204, 200, 200);
   position: relative;
   text-decoration: none;
   transition: color 0.4s ease-out;
@@ -33,7 +33,7 @@ h1 {
 
 .effect::after {
   border-radius: 50%;
-  border-top: 3px solid black;
+  border-top: 3px solid white;
   content: "";
   position: absolute;
   right: 100%;
@@ -44,10 +44,10 @@ h1 {
 
 .effect:hover {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .effect:hover::after {
   right: 0;
-  color: black;
+  color: white;
 }
