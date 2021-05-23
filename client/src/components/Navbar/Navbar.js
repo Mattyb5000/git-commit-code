@@ -6,7 +6,7 @@ import logo from "./logo.png";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg">
-      <img className="logo" alt="logo" src={logo}></img>{" "}
+      <img className="logo" alt="logo" src={logo}></img>
       <div className="navLinks">
         <p className="effect">Home</p>
         <p className="effect">About</p>
