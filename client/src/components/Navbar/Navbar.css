@@ -12,8 +12,8 @@ h1 {
 .navbar {
   display: flex;
   justify-content: space-between;
-  margin-top: 41px;
-  /* align-items: center; */
+  margin-top: 20px;
+  align-items: center;
 }
 
 .navLinks {
@@ -37,7 +37,7 @@ h1 {
   content: "";
   position: absolute;
   right: 100%;
-  bottom: 0.14em;
+  bottom: -5px;
   left: 0;
   transition: right 0.4s cubic-bezier(0, 0.5, 0, 1), border-color 0.4s ease-out;
 }
