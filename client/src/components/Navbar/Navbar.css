@@ -1,18 +1,20 @@
 p {
-  font-size: 18px;
+  font-size: 23px;
   margin: 40px;
 }
 
-h1 {
+.logo {
   margin-left: 110px;
-  font-size: 52px;
-  color: rgb(138, 226, 5);
+  height: 140px;
+  width: 370px;
+  opacity: 0.8;
 }
 
 .navbar {
+  background: rgba(204, 204, 204, 0.6);
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  height: 140px;
   align-items: center;
 }
 
@@ -25,7 +27,7 @@ h1 {
 /* ----------- hover effect */
 
 .effect {
-  color: rgb(170, 170, 170);
+  color: rgb(8, 8, 8);
   position: relative;
   text-decoration: none;
   transition: color 0.4s ease-out;
@@ -33,7 +35,7 @@ h1 {
 
 .effect::after {
   border-radius: 50%;
-  border-top: 3px solid black;
+  border-top: 3px solid white;
   content: "";
   position: absolute;
   right: 100%;
@@ -44,10 +46,10 @@ h1 {
 
 .effect:hover {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .effect:hover::after {
   right: 0;
-  color: black;
+  color: white;
 }
