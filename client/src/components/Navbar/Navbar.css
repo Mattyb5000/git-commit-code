@@ -1,0 +1,53 @@
+p {
+  font-size: 18px;
+  margin: 40px;
+}
+
+h1 {
+  margin-left: 110px;
+  font-size: 52px;
+  color: rgb(138, 226, 5);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 41px;
+  /* align-items: center; */
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 50px;
+}
+
+/* ----------- hover effect */
+
+.effect {
+  color: rgb(170, 170, 170);
+  position: relative;
+  text-decoration: none;
+  transition: color 0.4s ease-out;
+}
+
+.effect::after {
+  border-radius: 50%;
+  border-top: 3px solid black;
+  content: "";
+  position: absolute;
+  right: 100%;
+  bottom: 0.14em;
+  left: 0;
+  transition: right 0.4s cubic-bezier(0, 0.5, 0, 1), border-color 0.4s ease-out;
+}
+
+.effect:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.effect:hover::after {
+  right: 0;
+  color: black;
+}
