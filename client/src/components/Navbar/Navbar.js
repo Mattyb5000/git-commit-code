@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import logo from "./logo.png";
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg">
-      <h1>Git.Commit.Code.</h1>
+      <img className="logo" alt="logo" src={logo}></img>{" "}
       <div className="navLinks">
         <p className="effect">Home</p>
         <p className="effect">About</p>

@@ -1,12 +1,12 @@
 p {
-  font-size: 18px;
+  font-size: 20px;
   margin: 40px;
 }
 
-h1 {
+.logo {
   margin-left: 110px;
-  font-size: 52px;
-  color: rgb(138, 226, 5);
+  height: 150px;
+  opacity: 0.8;
 }
 
 .navbar {
@@ -25,7 +25,7 @@ h1 {
 /* ----------- hover effect */
 
 .effect {
-  color: rgb(204, 200, 200);
+  color: rgb(25, 228, 76);
   position: relative;
   text-decoration: none;
   transition: color 0.4s ease-out;
