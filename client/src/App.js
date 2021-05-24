@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Homepage from "./components/Homepage/Homepage";
 import Navbar from "./components/Navbar/Navbar";
@@ -7,6 +8,7 @@ import Profile from "./components/Profile/Profile";
 import Goals from "./components/Goals/Goals";
 import More from "./components/More/More";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
