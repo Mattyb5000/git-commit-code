@@ -3,6 +3,10 @@ p {
   margin: 40px;
 }
 
+p:link {
+  text-decoration: none;
+}
+
 .logo {
   margin-left: 110px;
   height: 140px;
