@@ -4,7 +4,7 @@ import Homepage from "./components/Homepage/Homepage";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/About/About";
 import Login from "./components/Login/Login";
-import Profile from "./components/Profile/Profile";
+import Profile from "./pages/Profile"
 import Goals from "./components/Goals/Goals";
 import More from "./components/More/More";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
