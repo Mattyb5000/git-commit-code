@@ -1,3 +1,14 @@
+.background {
+  height: 100vh;
+  background: lightblue url("./background.jpg");
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center fixed;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+}
+
 .welcome {
   background-color: rgb(245, 245, 245, 0.85);
   width: 400px;
