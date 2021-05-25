@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar2 from "../components/Navbar2/Navbar"
+import Navbar2 from "../components/Navbar2/Navbar2"
 import ProjectCard from "../components/ProjectCard/index.js";
 import ProjectTitle from "../components/ProjectTitle/index.js";
 

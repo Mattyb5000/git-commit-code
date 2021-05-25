@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./Navbar1.css";
 import logo from "./logo.png";
 
-function Navbar() {
+function Navbar1() {
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav className="navbar1 navbar-expand-lg">
       <img className="logo" alt="logo" src={logo}></img>
-      <div className="navLinks">
+      <div className="navLinks1">
         <Link to="/" style={{ textDecoration: "none" }}>
           <p className="effect">Home</p>
         </Link>
@@ -31,4 +31,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar1;
