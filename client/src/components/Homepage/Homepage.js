@@ -8,7 +8,7 @@ function Homepage() {
   return (
     
     <div className="background">
-      <Navbar1 />
+      <Navbar1 id="navbar"/>
       <div className="welcome animate__animated animate__fadeInUpBig">
         <div className="head">
           <h2>Welcome to Git.Commit</h2>

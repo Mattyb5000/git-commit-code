@@ -1,0 +1,15 @@
+.card {
+    width: 18rem;
+    height: auto;
+}
+
+.card-link {
+ color: black;
+ font-style: italic;
+}
+
+.linkSpace {
+    height: 3rem;
+    text-align: center;
+    
+}

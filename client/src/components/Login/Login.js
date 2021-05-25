@@ -1,8 +1,11 @@
 import React from "react";
 import "./Login.css";
+import Navbar2 from "../Navbar2/Navbar.js";
 
 function Login() {
   return (
+    <div>
+    <Navbar2 />
     <div className="contain">
       <div className="signup animate__animated animate__fadeInLeft">
         <h1 className="title">Signup</h1>
@@ -107,6 +110,7 @@ function Login() {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 }
