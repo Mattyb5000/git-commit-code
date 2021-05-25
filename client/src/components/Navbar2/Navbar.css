@@ -1,6 +1,6 @@
 p {
   font-size: 23px;
-  margin: 40px;
+  margin-right: 30px;
 }
 
 p:link {
@@ -25,7 +25,7 @@ p:link {
 .navLinks {
   display: flex;
   justify-content: space-between;
-  margin-right: 50px;
+  margin-left: 90px;
 }
 
 /* ----------- hover effect */
