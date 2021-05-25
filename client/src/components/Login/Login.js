@@ -56,7 +56,7 @@ function Login() {
           </div>
 
           <button type="submit" class="btn btn-primary btn-block">
-            Sign in
+            Sign Up
           </button>
         </form>
       </div>
@@ -101,7 +101,6 @@ function Login() {
               <a href="#!">Forgot password?</a>
             </div>
           </div>
-
           <button type="submit" class="btn btn-primary btn-block">
             Sign in
           </button>
