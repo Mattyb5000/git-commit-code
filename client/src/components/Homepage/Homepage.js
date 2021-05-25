@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar1 from "../Navbar1/Navbar";
 
 import "./Homepage.css";
 
 function Homepage() {
   return (
-    <div>
+    
+    <div className="background">
+      <Navbar1 />
       <div className="welcome animate__animated animate__fadeInUpBig">
         <div className="head">
           <h2>Welcome to Git.Commit</h2>

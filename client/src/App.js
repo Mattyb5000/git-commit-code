@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import Homepage from "./components/Homepage/Homepage";
-import Navbar from "./components/Navbar/Navbar";
 import About from "./pages/About";
 import Login from "./components/Login/Login";
 import Profile from "./pages/Profile"
@@ -15,8 +14,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <Router>
-      <div className="background">
-        <Navbar />
+      {/* <div className="background"> */}
+        
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/about" component={About} />
@@ -27,7 +26,7 @@ function App() {
           <Route exact path="/algprojects" component={AlgProjects} />
           <Route exact path="/More" component={More} />
         </Switch>
-      </div>
+      {/* </div> */}
     </Router>
   );
 }
