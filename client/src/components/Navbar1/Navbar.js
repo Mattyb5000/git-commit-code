@@ -5,9 +5,9 @@ import logo from "./logo.png";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav className="navbar navbar-expand">
       <img className="logo" alt="logo" src={logo}></img>
-      <div className="navLinks">
+      <div className="navLinks ">
         <Link to="/" style={{ textDecoration: "none" }}>
           <p className="effect">Home</p>
         </Link>

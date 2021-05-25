@@ -1,8 +1,11 @@
 import React from "react";
 import "../App.css";
+import Navbar1 from '../components/Navbar1/Navbar';
 
 function About() {
   return (
+    <div className="background">
+    <Navbar1/>
     <div className="container">
       <div className="about animate__animated animate__fadeIn">
         <h2>Why we developed Git.Commit</h2>
@@ -35,6 +38,7 @@ function About() {
           and completed, and graphs to track your progress.
         </p>
       </div>
+    </div>
     </div>
   );
 }
