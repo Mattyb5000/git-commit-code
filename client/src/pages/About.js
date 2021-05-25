@@ -28,11 +28,11 @@ function About() {
         <h2>How it works</h2>
         <p>
           Create a profile and and navigate to your profile page. From there you
-          can choose a language, framework, or coding challange from the
+          can choose a language, framework, or coding challenge from the
           selections in the "Projects" drop down link. Then choose a project or
           challenge from the cards presented to add it to your in-progress
           projects. Your profile also displays projects currently in progress
-          and completed, and graphs to track your progress.{" "}
+          and completed, and graphs to track your progress.
         </p>
       </div>
     </div>

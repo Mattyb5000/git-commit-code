@@ -18,6 +18,18 @@
   font-size: large;
 }
 
+.about {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  background-color: rgb(245, 245, 245, 0.85);
+  text-align: center;
+  padding: 30px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
