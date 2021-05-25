@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Homepage.css";
 
 function Homepage() {
   return (
     <div>
-      <div className="welcome animate__animated animate__flip">
+      <div className="welcome animate__animated animate__fadeInUpBig">
         <div className="head">
           <h2>Welcome to Git.Commit</h2>
         </div>
@@ -14,9 +16,9 @@ function Homepage() {
             projects page to keep polishing your skills!
           </p>
         </div>
-        <button type="button" class="btn btn-lg btn-primary" disabled>
+        <Link to="/login" type="button" class="btn btn-lg btn-primary" disabled>
           Signup
-        </button>
+        </Link>
       </div>
     </div>
   );
