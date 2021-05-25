@@ -4,7 +4,7 @@ import "./Login.css";
 function Login() {
   return (
     <div className="contain">
-      <div className="signup">
+      <div className="signup animate__animated animate__fadeInLeft">
         <h1 className="title">Signup</h1>
         <form>
           <div class="form-outline mb-4">
@@ -63,7 +63,7 @@ function Login() {
 
       {/* -----------------login------------------ */}
 
-      <div className="login">
+      <div className="login animate__animated animate__fadeInRight">
         <h1 className="title">Login</h1>
         <form>
           <div class="form-outline mb-4">
