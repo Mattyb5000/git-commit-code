@@ -5,8 +5,10 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "chart.js": "^3.3.0",
     "react": "^16.6.3",
     "react-bootstrap": "^1.6.0",
+    "react-chartjs-2": "^3.0.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^2.1.1"
