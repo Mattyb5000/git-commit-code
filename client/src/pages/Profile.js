@@ -4,6 +4,7 @@ import Navbar2 from "../components/Navbar2/Navbar2";
 import ProjectCard from "../components/ProjectCard/index.js";
 import FakeAPI from "../utils/FakeAPI";
 import FakeUserAPI from "../utils/FakeUserAPI";
+import Chart from "../components/Chart"
 
 const Profile = () => {
 	const [userProjects, setUserProjects] = useState([]);
@@ -90,6 +91,21 @@ const Profile = () => {
 					</div>
 				</div>
 			</div> */}
+      <Navbar2 />
+      <h5 className="pageTitle text-center pt-5">My Profile</h5>
+      <div className="container-fluid">
+        <div className="row d-flex justify-content-around">
+          
+
+        </div>
+      
+      
+
+
+      </div>
+			
+			
+			<Chart/>
 		</div>
 	);
 };
