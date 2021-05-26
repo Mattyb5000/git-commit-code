@@ -32,11 +32,21 @@ const JavaScriptProjects = () => {
 	}
 	return (
 		<div>
-			<div>Hello</div>
-			<Navbar2 />
-      {projects.map(jsProj => (
+      <Navbar2 />
+      <div className="container-fluid">
+        <div className="row d-flex justify-content-around">
+          {projects.map(jsProj => (
         <ProjectCard {...jsProj}/>
       ))}
+
+
+        </div>
+      
+      
+
+
+      </div>
+			
 			
 			{/* <ProjectTitle />   */}
 			{/* 6 cards */}

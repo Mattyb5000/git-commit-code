@@ -6,19 +6,19 @@ function ProjectCard(props) {
 
 	return (
 		<div>
-			<div className="card mt-4">
+			<div className="card mt-5">
 				{/* project name */}
-				<div className="card-header">
-					<h3>
+				<div className="card-header cardHeader">
+					<h5 className="projectTitle">
 						<strong>{projectName}</strong>
-					</h3>
+					</h5>
 				</div>
 				{/* image */}
 				<img className="card-img-top" src={image} alt="Card image cap" />
 				<div className="linkSpace">
 					<a
 						href={link}
-						className="card-link mt-2"
+						className="card-link"
 						target="blank"
 						rel="noopener noreferrer"
 					>
