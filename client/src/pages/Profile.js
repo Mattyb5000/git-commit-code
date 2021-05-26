@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Navbar2 from "../components/Navbar2/Navbar2";
 import ProjectCard from "../components/ProjectCard/index.js";
 import FakeAPI from "../utils/FakeAPI";
+import Chart from "../components/Chart"
 
 const Profile = () => {
   const [projects, setProjects] = useState([]);
@@ -43,7 +44,7 @@ const Profile = () => {
       </div>
 			
 			
-			
+			<Chart/>
 		</div>
 	);
 };
