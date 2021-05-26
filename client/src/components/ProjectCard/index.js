@@ -2,29 +2,38 @@ import React from "react";
 import "./style.css";
 
 function ProjectCard(props) {
-	const { projectName, link, image } = props;
+	const { project_id, projectName, link, image } = props;
 
 	return (
-		<div>
-			<div className="card mt-5">
-				{/* project name */}
-				<div className="card-header cardHeader">
-					<h5 className="projectTitle">
-						<strong>{projectName}</strong>
-					</h5>
+		<div className="col-sm-4 d-flex justify-content-center">
+			<div className="card mt-5 mb-5">
+				<div className="card-body">
+					{/* project name */}
+					<div className="card-header cardHeader">
+						<h5 className="projectTitle">
+							<strong>{projectName}</strong>
+						</h5>
+					</div>
 				</div>
 				{/* image */}
 				<img className="card-img-top" src={image} alt="Card image cap" />
-				<div className="linkSpace">
-					<a
-						href={link}
-						className="card-link"
-						target="blank"
-						rel="noopener noreferrer"
-					>
-						Click here for link
-					</a>
-				</div>
+				<ul className="list-group list-group-flush linkSpace">
+					<li className="list-group-item">
+						<a
+							href={link}
+							className="card-link"
+							target="blank"
+							rel="noopener noreferrer"
+						>
+							Click here for link
+						</a>
+					</li>
+					<li className="list-group-item">
+						<button type="button" id={project_id} class="btn btn-secondary selectProjectBut">
+							Select Project
+						</button>
+					</li>
+				</ul>
 			</div>
 		</div>
 	);
