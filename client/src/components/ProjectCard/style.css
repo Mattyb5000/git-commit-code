@@ -23,3 +23,7 @@
 .projectTitle {
     margin-top: 5px;
 }
+
+.selectProjectBut {
+    position: static;
+}
