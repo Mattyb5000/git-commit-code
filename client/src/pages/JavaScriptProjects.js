@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Navbar2 from "../components/Navbar2/Navbar2";
 import ProjectCard from "../components/ProjectCard/index.js";
-import ProjectTitle from "../components/ProjectTitle/index.js";
+// import ProjectTitle from "../components/ProjectTitle/index.js";
 //import fake API data
 import FakeAPI from "../utils/FakeAPI";
 
@@ -33,6 +33,7 @@ const JavaScriptProjects = () => {
 	return (
 		<div>
       <Navbar2 />
+      <h5 className="pageTitle text-center pt-5">JavaScript Projects</h5>
       <div className="container-fluid">
         <div className="row d-flex justify-content-around">
           {projects.map(jsProj => (
