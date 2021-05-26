@@ -14,7 +14,7 @@ function Homepage() {
         </div>
         <div className="content">
           <p>
-            New member? <br></br> Signup for free below, then checkout out our
+            New member? <br></br> Signup for free below, then checkout our
             projects page to keep polishing your skills!
           </p>
         </div>
