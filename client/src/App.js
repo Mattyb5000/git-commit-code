@@ -7,7 +7,7 @@ import Profile from "./pages/Profile"
 import JavaScriptProjects from "./pages/JavaScriptProjects";
 import ReactProjects from "./pages/ReactProjects";
 import AlgProjects from "./pages/AlgProjects";
-import More from "./components/More/More";
+import Contact from "./pages/Contact/Contact";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/jsprojects" component={JavaScriptProjects} />
           <Route exact path="/reactprojects" component={ReactProjects} />
           <Route exact path="/algprojects" component={AlgProjects} />
-          <Route exact path="/More" component={More} />
+          <Route exact path="/contact" component={Contact} />
         </Switch>
       {/* </div> */}
     </Router>
