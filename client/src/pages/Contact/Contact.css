@@ -1,0 +1,77 @@
+/* .contactHead {
+  margin: auto;
+  width: 55%;
+  text-align: center;
+} */
+
+/* .contactTitle {
+  font-size: 35px;
+} */
+
+header {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 85% 85% / 30%;
+}
+header .contactHead {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient(
+    135deg,
+    #0f2027 10%,
+    #203a43 50%,
+    #2c5364 100%
+  );
+}
+
+.contactTitle {
+  /* font-family: 'Dancing Script', cursive; */
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+h3,
+p {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 30px;
+}
+
+.formBox {
+  margin: auto;
+  margin-top: 30px;
+
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 22px;
+  background-color: rgb(245, 245, 245, 0.85);
+}
+
+.form-control {
+  margin: 20px;
+  width: 100px;
+}
+
+.send {
+  margin-bottom: 100px;
+  width: 300px;
+}
+
+.back {
+  background: lightblue url("./contact.jpg");
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+}

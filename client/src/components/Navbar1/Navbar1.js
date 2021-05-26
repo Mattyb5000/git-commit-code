@@ -23,8 +23,8 @@ function Navbar1() {
         <Link to="/goals" style={{ textDecoration: "none" }}>
           <p className="effect">Set Goals</p>
         </Link>
-        <Link to="/more" style={{ textDecoration: "none" }}>
-          <p className="effect">More</p>
+        <Link to="/contact" style={{ textDecoration: "none" }}>
+          <p className="effect">Contact</p>
         </Link>
       </div>
     </nav>
