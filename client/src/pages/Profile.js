@@ -2,18 +2,26 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Navbar2 from "../components/Navbar2/Navbar2";
 import ProjectCard from "../components/ProjectCard/index.js";
+import FakeAPI from "../utils/FakeAPI";
 import FakeUserAPI from "../utils/FakeUserAPI";
 
 const Profile = () => {
 	const [userProjects, setUserProjects] = useState([]);
+  const [projects, setProjects] = useState([]);
 
 	// loads all projects and sets them to projects
 	useEffect(() => {
 		loadUserProjects();
 	}, []);
+ 
 
 	function loadUserProjects() {
-		// store date from api call in a variable that is an array
+
+    const projectArray = FakeAPI.getProjects();
+    console.log(projectArray);
+    // setProjects(projectArray);
+    // console.log(projects);
+
 		const tempUserArray = FakeUserAPI.getUserProjects();
     console.log(tempUserArray);
 		const user = tempUserArray.filter(
@@ -21,7 +29,27 @@ const Profile = () => {
       // {(req.session.user_id)}
 		);
     
-		console.log(user);
+		console.log(user[0]);
+    const userProj = user[0].projects;
+    console.log(userProj);
+
+    const newProjectArray = [];
+    
+    const userProjArr = userProj.forEach(project_id => {
+      console.log(projectArray);
+      for (i=0; i < projectArray; i++) {
+       if(projectArray[i].project_id = project_id) {
+         newProjectArray.push(projectArray[i]);
+
+       }}})
+        //  projectArray.filter((
+        // (selectedUserProjects) => selectedUserProjects.project_id === (project_id)
+      
+      
+   
+    console.log(userProjArr);
+    
+    
     // const userProj = user.projects.map(project => (
     //   for (i=0; i < userProj.length; i++) {
 
