@@ -1,0 +1,29 @@
+.card {
+    width: 20rem;
+    height: auto;
+}
+
+.card-link {
+ color: black;
+ font-style: italic;
+ 
+}
+
+.linkSpace {
+    height: 3rem;
+    text-align: center;
+    
+}
+
+.cardHeader {
+    height: 75px;
+    text-align: center;
+}
+
+.projectTitle {
+    margin-top: 5px;
+}
+
+.selectProjectBut {
+    position: static;
+}
