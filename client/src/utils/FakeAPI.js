@@ -1,6 +1,6 @@
 
  
-    const projectArray = (
+    const projectArray = [
         {
             projectName: "JavaScript Clock",
             link: "https://codepen.io/codifiedconcepts/pen/bwgxRq",
@@ -109,7 +109,7 @@
             image: "https://images.unsplash.com/photo-1565229284535-2cbbe3049123?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80",
             language: "algorithm"
         }
- );
+    ];
  export default {
     getProjects: function() {
         console.log(projectArray);
