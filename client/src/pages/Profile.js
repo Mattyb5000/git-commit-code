@@ -19,47 +19,28 @@ const Profile = () => {
 
     const projectArray = FakeAPI.getProjects();
     console.log(projectArray);
-    // setProjects(projectArray);
-    // console.log(projects);
 
 		const tempUserArray = FakeUserAPI.getUserProjects();
-    console.log(tempUserArray);
 		const user = tempUserArray.filter(
 			(user) => user.user_id === 1
       // {(req.session.user_id)}
 		);
     
-		console.log(user[0]);
     const userProj = user[0].projects;
     console.log(userProj);
 
-    const newProjectArray = [];
+    const newProjectArray = 
     
-    const userProjArr = userProj.forEach(project_id => {
-      console.log(projectArray);
-      for (i=0; i < projectArray; i++) {
-       if(projectArray[i].project_id = project_id) {
-         newProjectArray.push(projectArray[i]);
-
-       }}})
-        //  projectArray.filter((
-        // (selectedUserProjects) => selectedUserProjects.project_id === (project_id)
-      
-      
-   
-    console.log(userProjArr);
+    userProj.map((userProj) => (
+      projectArray.filter(project => project.project_id === userProj) 
+    )       
+      )
     
     
-    // const userProj = user.projects.map(project => (
-    //   for (i=0; i < userProj.length; i++) {
+    console.log(newProjectArray);
+    setProjects(newProjectArray);
+    console.log(projects);
 
-    // }...userProj
-    // ) );
-
-    // console.log(userProj);
-		//sort data in that variable array
-		// pass sorted array to setProjects function
-		// setUserProjects(userProj);
 		//once I'm using the API, the projects need to be sorted in setProjects function within curly braces
 		/*	//.then((res) => setProjects(res.data))
 			.catch((err) => {
