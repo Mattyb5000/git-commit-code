@@ -22,10 +22,10 @@ function Navbar2() {
         <div class="dropdown">
           <p class="effect">Projects</p>
           <div class="dropdown-content">
-            <Link to="/jsproject">
+            <Link to="/jsprojects">
             <a href="#">Javascript</a>
             </Link>
-            <Link to="/algoprojects">
+            <Link to="/algprojects">
             <a href="#">Algorithms</a>
             </Link>
             <Link to="/reactprojects">
@@ -38,9 +38,9 @@ function Navbar2() {
         <Link to="/profile" style={{ textDecoration: "none" }}>
           <p className="effect">My Profile</p>
         </Link>
-        <Link to="/goals" style={{ textDecoration: "none" }}>
+        {/* <Link to="/goals" style={{ textDecoration: "none" }}>
           <p className="effect">Set Goals</p>
-        </Link>
+        </Link> */}
         <Link to="/contact" style={{ textDecoration: "none" }}>
           <p className="effect">Contact</p>
         </Link>

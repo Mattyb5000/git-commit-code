@@ -91,7 +91,6 @@ const Profile = () => {
 					</div>
 				</div>
 			</div> */}
-      <Navbar2 />
       <h5 className="pageTitle text-center pt-5">My Profile</h5>
       <div className="container-fluid">
         <div className="row d-flex justify-content-around">
