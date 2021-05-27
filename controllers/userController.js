@@ -5,7 +5,7 @@ const db = require("../models");
 
 // findAll searches the user projects API and returns only the entries we haven't already saved
 
-// It also makes sure that the projects returned from the API all contain a title, author, link, description, and image
+// It also makes sure that the projects returned from the API all contain a ????
 module.exports = {
   findAll: function(req, res) {
     const { query: params } = req;
