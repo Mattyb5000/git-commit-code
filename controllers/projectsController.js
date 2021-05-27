@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// Defining methods for the booksController-ST
+// Defining methods for the projectsController-ST
 module.exports = {
     findAll: function(req, res) {
       db.Project
