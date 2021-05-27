@@ -29,7 +29,7 @@ function ProjectCard(props) {
 						</a>
 					</li>
 					<li className="list-group-item">
-						<button type="button" id={project_id} class="btn btn-secondary selectProjectBut">
+						<button type="button" id={project_id} className="btn btn-secondary selectProjectBut">
 							Select Project
 						</button>
 					</li>
