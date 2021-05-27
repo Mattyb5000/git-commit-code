@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -15,11 +14,11 @@ const UserSchema = new Schema({
     required: "Last Name is Required"
   },
 
-  username: {
-    type: String,
-    trim: true,
-    required: "Username is Required"
-  },
+  // username: {
+  //   type: String,
+  //   trim: true,
+  //   required: "Username is Required"
+  // },
 
   password: {
     type: String,
@@ -39,6 +38,29 @@ const UserSchema = new Schema({
     default: Date.now
   },
 
+  projectsInProgress: [{
+    project_id: Number,
+    required: false
+  }],
+
+  projectsComplete: [{
+    project_id: Number,
+    deployed_url: String,
+    required: false
+  }],
+
+  //or should we do this?
+  // projectsInProgress: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Project"
+  // }],
+
+  // projectsComplete: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Project"
+  // }],
+  
+
   lastUpdated: Date,
 
   fullName: String
@@ -46,13 +68,11 @@ const UserSchema = new Schema({
 
 UserSchema.methods.setFullName = function() {
   this.fullName = `${this.firstName} ${this.lastName}`;
-
   return this.fullName;
 };
 
 UserSchema.methods.lastUpdatedDate = function() {
   this.lastUpdated = Date.now();
-
   return this.lastUpdated;
 };
 
