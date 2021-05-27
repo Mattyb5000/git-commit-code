@@ -122,3 +122,15 @@ const projectSeed = [
       "https://images.unsplash.com/photo-1565229284535-2cbbe3049123?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80",
   },
 ];
+
+db.Project
+  .remove({})
+  .then(() => db.Project.collection.insertMany(ProjectSeed))
+  .then(data => {
+    console.log(data.result.n + " Hell yeah! We did it!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
