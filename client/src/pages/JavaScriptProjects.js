@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Navbar2 from "../components/Navbar2/Navbar2";
 import ProjectCard from "../components/ProjectCard/index.js";
-import API from "../utils/API"
+import API from "../utils/API";
 
 const JavaScriptProjects = () => {
 	// sets initial state of projects
@@ -13,33 +13,24 @@ const JavaScriptProjects = () => {
 		loadProjects();
 	}, []);
 
-	const loadProjects =() => {
+	const loadProjects = () => {
 		// store date from api call in a variable that is an array
-		console.log('you are in the loadProjects function');
+		console.log("you are in the loadProjects function");
 		API.getProjects()
-		.then((res) => {
-		console.log(res);
-		const jsArray = () => {
-			res.filter((jsProj) => jsProj.language === "Javascript");
-		};
-		console.log(jsArray);
-		})
-		.catch((err) => console.log(err))	
-	}
-		//once I'm using the API, the projects need to be sorted in setProjects function within curly braces
-		/*	//.then((res) => setProjects(res.data))
-			.catch((err) => {
-				console.log(err);
-			});*/
-	// function setProjects() {
+			.then((res) => {
+				console.log(res.data);
+				setProjects(
+					res.data.filter((jsProj) => jsProj.language === "Javascript")
+				);
+			})
+			.catch((err) => console.log(err));
+	};
+	console.log("Is this projects", projects);
 
-	// }
-	
-		
 	return (
 		<div>
 			<Navbar2 />
-			{/* <h5 className="pageTitle text-center pt-5">JavaScript Projects</h5>
+			<h5 className="pageTitle text-center pt-5">JavaScript Projects</h5>
 			<div className="container-fluid">
 				<div className="row d-flex justify-content-around">
 						{projects.map((jsProj) => (
@@ -47,7 +38,7 @@ const JavaScriptProjects = () => {
 						))}
 					
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 };
