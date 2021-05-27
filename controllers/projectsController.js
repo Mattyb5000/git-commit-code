@@ -2,14 +2,14 @@ const db = require("../models");
 
 // Defining methods for the projectsController-ST
 module.exports = {
-    findAll: function(req, res) {
+    find: function(req, res) {
       console.log('you are in api find all project route');
-      db.Project
-        .find(req.query)
+      db.Project.find({})
         .sort({ date: -1 })
         .then(dbProject => res.json(dbProject))
         .catch(err => res.status(422).json(err));
     },
+
     findById: function(req, res) {
       console.log('you are in api findById project route');
       db.Project

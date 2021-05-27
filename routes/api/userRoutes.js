@@ -2,18 +2,18 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 // Matches with "/api/user"
-router
+router.route("/")
+.post(userController.create);
 //create a new user for sign-up
-  .route("/")
-  .post(userController.create)
+  
 
   //find an existing user to log in
-  .route("/login")
-  .post(userController.findOne)
+  router.route("/login")
+  .post(userController.findOne);
 
   //log out an existing user
-  .route("/logout")
-  .post(userController.destroy)
+  router.route("/logout")
+  .post(userController.destroy);
 
   module.exports = router;
 

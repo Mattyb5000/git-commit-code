@@ -1,4 +1,3 @@
-const axios = require("axios");
 const db = require("../models");
 const { findOne } = require("../models/project");
 
@@ -19,7 +18,7 @@ create: function(req, res) {
 },
 
 //find an existing user
-findOne: function(req, res) {
+findOne: async function (req, res) {
   console.log('you are in api findOne user route');
   db.User
     .findOne({
