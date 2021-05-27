@@ -24,7 +24,7 @@ const data = {
 class Chart extends Component {
   render() {
     return (
-      <div>
+      <div className='container'>
           <Bar data={data} />
       </div>
     );
