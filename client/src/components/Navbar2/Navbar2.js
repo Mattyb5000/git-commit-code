@@ -19,18 +19,15 @@ function Navbar2() {
         </Link>
         {/* -------------------------------------------------- */}
 
-        <div class="dropdown">
-          <p class="effect">Projects</p>
-          <div class="dropdown-content">
-            <Link to="/jsprojects">
-            <a href="#">Javascript</a>
-            </Link>
-            <Link to="/algprojects">
-            <a href="#">Algorithms</a>
-            </Link>
-            <Link to="/reactprojects">
-            <a href="#">React</a>
-            </Link>
+        <div className="dropdown">
+          <p className="effect">Projects</p>
+          <div className="dropdown-content">
+            <Link to="/jsprojects" style={{ textDecoration: "none" }}>
+          <p className="effect">Logout</p></Link>
+            <Link to="/algprojects" style={{ textDecoration: "none" }}>
+          <p className="effect">Logout</p></Link>
+            <Link to="/reactprojects" style={{ textDecoration: "none" }}>
+          <p className="effect">Logout</p></Link>
           </div>
         </div>
 
@@ -38,9 +35,6 @@ function Navbar2() {
         <Link to="/profile" style={{ textDecoration: "none" }}>
           <p className="effect">My Profile</p>
         </Link>
-        {/* <Link to="/goals" style={{ textDecoration: "none" }}>
-          <p className="effect">Set Goals</p>
-        </Link> */}
         <Link to="/contact" style={{ textDecoration: "none" }}>
           <p className="effect">Contact</p>
         </Link>

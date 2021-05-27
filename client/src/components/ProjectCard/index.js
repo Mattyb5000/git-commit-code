@@ -16,7 +16,7 @@ function ProjectCard(props) {
 					</div>
 				</div>
 				{/* image */}
-				<img className="card-img-top" src={image} alt="Card image cap" />
+				<img className="card-img-top" src={image} alt="tech" />
 				<ul className="list-group list-group-flush linkSpace">
 					<li className="list-group-item">
 						<a

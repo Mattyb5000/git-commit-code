@@ -1,46 +1,40 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Navbar2 from "../components/Navbar2/Navbar2";
-import ProjectCard from "../components/ProjectCard/index.js";
+// import ProjectCard from "../components/ProjectCard/index.js";
 import FakeAPI from "../utils/FakeAPI";
 import FakeUserAPI from "../utils/FakeUserAPI";
-import Chart from "../components/Chart"
+import Chart from "../components/Chart";
 
 const Profile = () => {
 	const [userProjects, setUserProjects] = useState([]);
-  const [projects, setProjects] = useState([]);
+	const [projects, setProjects] = useState([]);
 
 	// loads all projects and sets them to projects
 	useEffect(() => {
 		loadUserProjects();
 	}, []);
- 
 
 	function loadUserProjects() {
-
-    const projectArray = FakeAPI.getProjects();
-    console.log(projectArray);
+		const projectArray = FakeAPI.getProjects();
+		console.log(projectArray);
 
 		const tempUserArray = FakeUserAPI.getUserProjects();
 		const user = tempUserArray.filter(
 			(user) => user.user_id === 1
-      // {(req.session.user_id)}
+			// {(req.session.user_id)}
 		);
-    
-    const userProj = user[0].projects;
-    console.log(userProj);
 
-    const newProjectArray = 
-    
-    userProj.map((userProj) => (
-      projectArray.filter(project => project.project_id === userProj) 
-    )       
-      )
-    
-    
-    console.log(newProjectArray);
-    setProjects(newProjectArray);
-    console.log(projects);
+		const userProj = user[0].projects;
+		console.log(userProj);
+
+		const newProjectArray = userProj.map((userProj) =>
+			projectArray.filter((project) => project.project_id === userProj)
+		);
+
+		console.log(newProjectArray);
+		setProjects(newProjectArray);
+		console.log(projects);
 
 		//once I'm using the API, the projects need to be sorted in setProjects function within curly braces
 		/*	//.then((res) => setProjects(res.data))
@@ -91,20 +85,12 @@ const Profile = () => {
 					</div>
 				</div>
 			</div> */}
-      <h5 className="pageTitle text-center pt-5">My Profile</h5>
-      <div className="container-fluid">
-        <div className="row d-flex justify-content-around">
-          
+			<h5 className="pageTitle text-center pt-5">My Profile</h5>
+			<div className="container-fluid">
+				<div className="row d-flex justify-content-around"></div>
+			</div>
 
-        </div>
-      
-      
-
-
-      </div>
-			
-			
-			<Chart/>
+			<Chart />
 		</div>
 	);
 };
