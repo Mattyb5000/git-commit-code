@@ -29,7 +29,8 @@ function ProjectCard(props) {
 						</a>
 					</li>
 					<li className="list-group-item">
-						<button type="button" id={_id} className="btn btn-secondary selectProjectBut">
+						<button onClick={() => props.handleProjectSelect(_id)} className="btn btn-secondary selectProjectBut"
+						>
 							Select Project
 						</button>
 					</li>

@@ -86,6 +86,8 @@ const Profile = () => {
 									<button
 										type="button"
 										id={proj._id}
+										// data={req.session.user_id}
+										// data={req.session.user_id}
 										className="btn btn-secondary selectProjectBut"
 									>
 										Submit Project
