@@ -9,7 +9,7 @@ import Navbar2 from "../Navbar2/Navbar2";
 function Login() {
   return (
 
-    <div className="background">
+    <div className="brick_background">
       <Navbar2 />
       <div className="container col-9 animate__animated animate__fadeIn">
         <div className="row">
