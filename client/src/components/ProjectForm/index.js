@@ -1,28 +1,109 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "../../utils/API";
+import { Col, Row, Container } from "../Grid";
+import { Input, TextArea, FormBtn } from "./projectform";
+import { List, ListItem } from "../List";
+import { Link } from "react-router-dom";
+import DeleteBtn from "../DeleteBtn";
 
-// This file exports the Input, TextArea, and FormBtn components
+function ProjectForms() {
+  // Setting our component's initial state
+  const [projectForms, setProjectForms] = useState([])
+  const [formObject, setFormObject] = useState({})
 
-export function Input(props) {
+  // Load all ProjectForms and store them with setProjectForms
+  useEffect(() => {
+    loadProjectForms()
+  }, [])
+
+  // Loads all ProjectForms and sets them to ProjectForms
+  function loadProjectForms() {
+    API.getProjectForms()
+      .then(res => 
+        setProjectForms(res.data)
+      )
+      .catch(err => console.log(err));
+  };
+
+  // Deletes a projectForm from the database with a given id, then reloads ProjectForms from the db
+  function deleteProjectForm(id) {
+    API.deleteProjectForm(id)
+      .then(res => loadProjectForms())
+      .catch(err => console.log(err));
+  }
+
+  // Handles updating component state when the user types into the input field
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({...formObject, [name]: value})
+  };
+
+  // When the form is submitted, use the API.saveprojectForm method to save the projectForm data
+  // Then reload ProjectForms from the database
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    if (formObject.projectname && formObject.username) {
+      API.saveProjectForm({
+        title: formObject.projectname,
+        author: formObject.username,
+        synopsis: formObject.url
+      })
+        .then(res => loadProjectForms())
+        .catch(err => console.log(err));
+    }
+  };
   return (
-    <div className="form-group">
-      <input className="form-control" {...props} />
-    </div>
+    <Container fluid>
+      <Row>
+        <Col size="md-6">
+          <form>
+            <Input
+              onChange={handleInputChange}
+              name="projectname"
+              placeholder="Project Name (required)"
+            />
+            <Input
+              onChange={handleInputChange}
+              name="username"
+              placeholder="Enter User Name"
+            />
+            <TextArea
+              onChange={handleInputChange}
+              name="url"
+              placeholder="Deployed URL"
+            />
+            <FormBtn
+              disabled={!(formObject.projectname && formObject.username)}
+              onClick={handleFormSubmit}
+            >
+              Submit Project
+            </FormBtn>
+          </form>
+        </Col>
+        <Col size="md-6 sm-12">
+        
+          {projectForms.length ? (
+            <List>
+              {projectForms.map(projectForm => (
+                <ListItem key={projectForm._id}>
+                  <Link to={"/projectForms/" + projectForms._id}>
+                    <strong>
+                      {projectForm.projectname} by {projectForm.username}
+                    </strong>
+                  </Link>
+                  <DeleteBtn onClick={() => deleteProjectForm(projectForms._id)} />
+                </ListItem>
+              ))}
+            </List>
+          ) : (
+            <h3>No Results to Display</h3>
+          )}
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
-export function TextArea(props) {
-  return (
-    <div className="form-group">
-      <textarea className="form-control" rows="20" {...props} />
-    </div>
-  );
-}
 
-export function FormBtn(props) {
-  return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
-      {props.children}
-    </button>
-  );
-}
+export default ProjectForms;
 
