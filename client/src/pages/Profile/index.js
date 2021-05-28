@@ -23,14 +23,26 @@ const Profile = () => {
 			.then((res) => {
 				console.log(res.data);
 				setUserProjects(res.data[0].projectsInProgress);
+				const user=res.data[0]._id;
 			})
 			.catch((err) => console.log(err));
 	};
 	console.log("Is user projects", userProjects);
 
-	const handleProjectBut = id => {
-		console.log(id);
-		
+	// const handleProjectBut = id => {
+function handleProjectBut(event) {
+	// const rowId = event.target.parentNode.parentNode.id;
+	// console.log(rowId);
+
+	console.log("you clicked select button");
+	// const id = e.target.id;
+	// console.log(id);
+	// console.log(id);
+	// var title = this.closest("tr").find(".title").text();
+	// console.log(title);
+
+
+
 
 		// API.addUserProjectInProgress(id).then((res) => {
 		// 	console.log(res.data);
@@ -58,14 +70,18 @@ const Profile = () => {
 						</thead>
 						<tbody className="projectRow">
 							{userProjects.map((proj) => (
-								<tr>
-									<td>{proj.title}</td>
-									<td>{proj.language}</td>
+								<tr id={proj._id}>
+									<td className="title">{proj.title}</td>
+									<td className="language">{proj.language}</td>
 									<td>{proj.link}</td>
 									<td>
 										<button
-											onClick={() => handleProjectBut(proj._id)}
-											// id={proj._id}
+											// onClick={() => handleProjectBut(proj._id)}
+											// onClick={() => handleProjectBut()}
+											onClick={() => handleProjectBut()}
+											id={proj._id}
+											title={proj.title}
+											language={proj.language}
 											// data={req.session.user_id}
 											// data={req.session.user_id}
 											className="btn btn-secondary selectProjectBut"
