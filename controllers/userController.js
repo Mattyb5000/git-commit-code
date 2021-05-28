@@ -1,12 +1,6 @@
 const db = require("../models");
 const { findOne } = require("../models/project");
 
-// Defining methods for the userController
-
-// findAll searches the user projects API and returns only the entries we haven't already saved
-
-// It also makes sure that the projects returned from the API all contain a ????
-
 //create a new user
 module.exports = {
 create: function(req, res) {
@@ -15,6 +9,12 @@ create: function(req, res) {
     .then(dbUser => res.json(dbUser))
     //does req.session code go here?
     .catch(err => res.status(422).json(err));
+},
+
+find: async function(req,res) {
+  db.User.find({})
+  .then(dbUser => res.json(dbUser))
+  .catch(err => res.status(422).json(err));
 },
 
 //find an existing user

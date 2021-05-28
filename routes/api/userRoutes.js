@@ -6,6 +6,8 @@ router.route("/")
 .post(userController.create);
 //create a new user for sign-up
   
+router.route("/get-users")
+.get(userController.find);
 
   //find an existing user to log in
   router.route("/login")

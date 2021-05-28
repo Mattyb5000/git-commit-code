@@ -2,8 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Navbar2 from "../components/Navbar2/Navbar2";
 // import ProjectCard from "../components/ProjectCard/index.js";
-import FakeAPI from "../utils/FakeAPI";
-import FakeUserAPI from "../utils/FakeUserAPI";
+import API from "../utils/API";
 import Chart from "../components/Chart";
 
 const Profile = () => {
@@ -16,32 +15,49 @@ const Profile = () => {
 	}, []);
 
 	function loadUserProjects() {
-		const projectArray = FakeAPI.getProjects();
-		console.log(projectArray);
+		console.log("you are in the load projects function on profile page");
+	// 	API.getProjects()
+	// 		.then((res) => {
+	// 			console.log(res.data);
+	// 			setProjects(res.data);
+	// 		})
+	// 		.catch((err) => console.log(err));
+	// };
 
-		const tempUserArray = FakeUserAPI.getUserProjects();
-		const user = tempUserArray.filter(
-			(user) => user.user_id === 1
-			// {(req.session.user_id)}
-		);
+	// console.log("Projects", projects);
+	
+		API.getUsers()
+		.then((res) => {
+			console.log(res.data);
+			const users = res.data.filter((user) =>
+			user._id === "60b0238ef4c49807a04ab254");
+			console.log(users);
+			
+		});
+		
+	 	// {(req.session.user_id)}
+		// );
+		// console.log(user);
 
-		const userProj = user[0].projects;
-		console.log(userProj);
 
-		const newProjectArray = userProj.map((userProj) =>
-			projectArray.filter((project) => project.project_id === userProj)
-		);
 
-		console.log(newProjectArray);
-		setProjects(newProjectArray);
-		console.log(projects);
+		// const userProj = user[0].projects;
+		// console.log(userProj);
+
+		// const newProjectArray = userProj.map((userProj) =>
+		// 	projectArray.filter((project) => project.project_id === userProj)
+		// );
+
+		// console.log(newProjectArray);
+		// setProjects(newProjectArray);
+		// console.log(projects);
 
 		//once I'm using the API, the projects need to be sorted in setProjects function within curly braces
 		/*	//.then((res) => setProjects(res.data))
 			.catch((err) => {
 				console.log(err);
 			});*/
-	}
+	
 	return (
 		<div>
 			<Navbar2 />
