@@ -59,54 +59,9 @@ const Profile = () => {
 	return (
 		<div>
 			<Navbar2 />
-<<<<<<< HEAD
-			<ProjectForm />
-			{/* <h5 className="pageTitle text-center pt-5">My Profile</h5>
-			<div className="container-fluid">
-				<div className="row d-flex">
-					<div className="col-sm-7">
-						<table class="table">
-							<thead>
-								<tr>
-									<th scope="col">Project Number</th>
-									<th scope="col">Project Name</th>
-                  <th scope="col">Project Language</th>
-									<th scope="col">Project Link</th>
-                  <th scope="col">Submit Completed Project</th>
-									
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
-                  <td></td>
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>Jacob</td>
-									<td>Thornton</td>
-									<td>@fat</td>
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td>Larry</td>
-									<td>the Bird</td>
-									<td>@twitter</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div> */}
-			<h5 className="pageTitle text-center pt-5">My Profile</h5>
-=======
 			<div className="container-fluid pageTitle">
 				<h5 className="pageTitle text-center pt-5">My Profile</h5>
 			</div>
->>>>>>> 0530d92d06bb87793d7f499e3725e37c71bb4646
 			<div className="container-fluid">
 				<div className="row d-flex justify-content-around"></div>
 				<div className="col-12, col-md-12">

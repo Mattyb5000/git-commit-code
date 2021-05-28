@@ -1,41 +1,28 @@
-import React, { useState }  from 'react'
+import React from "react";
 
-export const ProjectForm = () => {
-    
-    var[projectName, setProjectName] = useState()
+// This file exports the Input, TextArea, and FormBtn components
 
-    const projectNameUpdate=(event)=>{ // Dealing with name field changes to update our state
-        setProjectName(event.target.value)
-    }
-
-    const handleSubmit=()=> { // Once the form has been submitted, this function will post to the backend
-        // TODO: 
-        const postURL = "need this route" //Our previously set up route in the backend
-        fetch(postURL, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ // We should keep the fields consistent for managing this data later
-                name: projectName,
-                clockedIn:false,
-                dates:[]
-            })
-        })
-        .then(()=>{
-            // Once posted, the user will be notified 
-            alert('Your project has been added!');
-        })
-    }
-return (
-    <div>
-    <form>
-    <label>Project Name:</label>
-    <input required onChange={projectNameUpdate}></input>
-    <button type="submit"> Submit</button>
-</form>
-</div>
-)
+export function Input(props) {
+  return (
+    <div className="form-group">
+      <input className="form-control" {...props} />
+    </div>
+  );
 }
-export default ProjectForm;
+
+export function TextArea(props) {
+  return (
+    <div className="form-group">
+      <textarea className="form-control" rows="20" {...props} />
+    </div>
+  );
+}
+
+export function FormBtn(props) {
+  return (
+    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+      {props.children}
+    </button>
+  );
+}
+
