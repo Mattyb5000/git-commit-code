@@ -21,7 +21,9 @@
   },
   "dependencies": {
     "chart.js": "^3.3.0",
+    "connect-mongo": "^4.4.1",
     "express": "^4.16.3",
+    "express-session": "^1.17.2",
     "if-env": "^1.0.4",
     "mongodb": "^3.6.8",
     "mongoose": "^5.12.11"
