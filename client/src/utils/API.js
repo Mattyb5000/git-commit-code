@@ -16,6 +16,10 @@ export default {
 
   getUsers: function() {
     return axios.get("/api/users/get-users");
+  },
+
+  addUserProjectInProgress: function(id) {
+    return axios.put("/api/users/new-project", {id});
   }
   // Saves a project to the database
   // saveProject: function(projectData) {
