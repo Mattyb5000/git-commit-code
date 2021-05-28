@@ -1,10 +1,15 @@
-.contain {
+.background {
+  background: url("whitebrick.jpg");
+  min-height: 1200px;
+}
+
+/* .contain {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
-.login {
+/* .login {
   width: 400px;
   height: auto;
   background-color: rgb(245, 245, 245, 0.85);
@@ -23,6 +28,13 @@
   margin-right: auto;
   margin-top: 150px;
   text-align: center;
+} */
+
+.container {
+  background-color: rgb(245, 245, 245, 0.85);
+  margin-top: 50px;
+  margin-bottom: 50px;
+
 }
 
 form {
