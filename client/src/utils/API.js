@@ -20,10 +20,27 @@ export default {
 
   addUserProjectInProgress: function(id) {
     return axios.put("/api/users/new-project", {id});
+  },
+
+  getProjectForms: function() {
+    return axios.get("/api/ProjectForms");
+  },
+  // Gets the ProjectForm with the given id
+  getProjectForm: function(id) {
+    return axios.get("/api/ProjectForms/" + id);
+  },
+  // Deletes the ProjectForm with the given id
+  deleteProjectForm: function(id) {
+    return axios.delete("/api/ProjectForms/" + id);
+  },
+  // Saves a ProjectForm to the database
+  saveProjectForm: function(projectFormData) {
+    return axios.post("/api/ProjectForms", projectFormData);
   }
+};
+
   // Saves a project to the database
   // saveProject: function(projectData) {
   //   return axios.post("/api/projects", projectData);
   // },
   //add user functions here
-};
