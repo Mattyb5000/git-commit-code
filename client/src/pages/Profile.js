@@ -92,9 +92,9 @@ console.log("hello");
 				<div className="col-12, col-md-12"></div>
 			</div>
 			<h5 className="pageTitle text-center pt-5">My progress</h5>
-      <ProjectForm />
+      {/* <ProjectForm /> */}
       
-			<Chart />
+			{/* <Chart /> */}
 		</div>
 	);
 };

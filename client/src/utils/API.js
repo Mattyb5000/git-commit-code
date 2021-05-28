@@ -3,6 +3,7 @@ import axios from "axios";
 export default {
   // Gets all projects
   getProjects: function() {
+    console.log("you're in getProjects");
     return axios.get("/api/projects/");
   },
   // Gets the project with the given id
