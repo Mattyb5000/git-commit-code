@@ -80,8 +80,7 @@ function ProjectForms() {
             </FormBtn>
           </form>
         </Col>
-        <Col size="md-6 sm-12">
-        
+        <Col size="md-6 md-6">
           {projectForms.length ? (
             <List>
               {projectForms.map(projectForm => (
