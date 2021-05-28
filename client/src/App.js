@@ -3,7 +3,7 @@ import "./App.css";
 import Homepage from "./components/Homepage/Homepage";
 import About from "./pages/About";
 import Login from "./components/Login/Login";
-import Profile from "./pages/Profile/index.js"
+import Profile from "./pages/Profile"
 import JavaScriptProjects from "./pages/JavaScriptProjects";
 import ReactProjects from "./pages/ReactProjects";
 import AlgProjects from "./pages/AlgProjects";
