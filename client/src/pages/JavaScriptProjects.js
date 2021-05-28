@@ -2,8 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Navbar2 from "../components/Navbar2/Navbar2";
 import ProjectCard from "../components/ProjectCard/index.js";
-//import fake API data
-import FakeAPI from "../utils/FakeAPI";
+import API from "../utils/API";
 
 const JavaScriptProjects = () => {
 	// sets initial state of projects
@@ -14,23 +13,20 @@ const JavaScriptProjects = () => {
 		loadProjects();
 	}, []);
 
-	function loadProjects() {
+	const loadProjects = () => {
 		// store date from api call in a variable that is an array
-		const tempArray = FakeAPI.getProjects();
-		const jsArray = tempArray.filter(
-			(jsProj) => jsProj.language === "javascript"
-		);
-		console.log(jsArray);
+		console.log("you are in the loadProjects function");
+		API.getProjects()
+			.then((res) => {
+				console.log(res.data);
+				setProjects(
+					res.data.filter((jsProj) => jsProj.language === "Javascript")
+				);
+			})
+			.catch((err) => console.log(err));
+	};
+	console.log("Is this projects", projects);
 
-		//sort data in that variable array
-		// pass sorted array to setProjects function
-		setProjects(jsArray);
-		//once I'm using the API, the projects need to be sorted in setProjects function within curly braces
-		/*	//.then((res) => setProjects(res.data))
-			.catch((err) => {
-				console.log(err);
-			});*/
-	}
 	return (
 		<div>
 			<Navbar2 />

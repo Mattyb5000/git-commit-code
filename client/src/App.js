@@ -16,8 +16,6 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
     <Router>
-      {/* <div className="background"> */}
-        
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/about" component={About} />

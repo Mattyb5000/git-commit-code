@@ -1,4 +1,3 @@
-const axios = require("axios");
 const db = require("../models");
 const { findOne } = require("../models/project");
 
@@ -11,6 +10,7 @@ const { findOne } = require("../models/project");
 //create a new user
 module.exports = {
 create: function(req, res) {
+  console.log('you are in api create user route');
   db.User.create(req.body)
     .then(dbUser => res.json(dbUser))
     //does req.session code go here?
@@ -18,7 +18,8 @@ create: function(req, res) {
 },
 
 //find an existing user
-findOne: function(req, res) {
+findOne: async function (req, res) {
+  console.log('you are in api findOne user route');
   db.User
     .findOne({
       where: {
@@ -49,6 +50,7 @@ findOne: function(req, res) {
 
 
 destroy: function(req, res) {
+  console.log('you are in the api logout user route');
   db.User.findById(req.params.id)
   //how to add the if else statement for if req.session.logged_In?
     .then (req.session.destroy(() => {

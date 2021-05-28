@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 
 function ProjectCard(props) {
-	const { project_id, projectName, link, image } = props;
+	const { _id, title, link, image } = props;
 
 	return (
 		<div className="col-sm-4 d-flex justify-content-center">
@@ -11,12 +11,12 @@ function ProjectCard(props) {
 					{/* project name */}
 					<div className="card-header cardHeader">
 						<h5 className="projectTitle">
-							<strong>{projectName}</strong>
+							<strong>{title}</strong>
 						</h5>
 					</div>
 				</div>
 				{/* image */}
-				<img className="card-img-top" src={image} alt="Card image cap" />
+				<img className="card-img-top" src={image} alt="tech" />
 				<ul className="list-group list-group-flush linkSpace">
 					<li className="list-group-item">
 						<a
@@ -29,7 +29,7 @@ function ProjectCard(props) {
 						</a>
 					</li>
 					<li className="list-group-item">
-						<button type="button" id={project_id} className="btn btn-secondary selectProjectBut">
+						<button type="button" id={_id} className="btn btn-secondary selectProjectBut">
 							Select Project
 						</button>
 					</li>
@@ -39,20 +39,5 @@ function ProjectCard(props) {
 	);
 }
 
-// function ProjectCard({ icon, title, children }) {
-// 	return (
-// 		<div className="card mt-4">
-// 			{/* project name */}
-// 			<div className="card-header">
-// 				<h3>
-// 					<strong>{projectName}</strong>
-// 				</h3>
-// 			</div>
-// 			{/* image */}
-// 			<img className="card-img-top" src={image} alt="Card image cap" />
-// 			<a href="{link}" class="card-link">Click here for link</a>
-// 		</div>
-// 	);
-// }
 
 export default ProjectCard;

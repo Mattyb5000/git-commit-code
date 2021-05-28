@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 // This file empties the Project collection and inserts the projects below
-
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gitcommit_db");
 
 const projectSeed = [

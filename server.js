@@ -20,9 +20,13 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/gitcommit_db",
   {
     useCreateIndex: true,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+    
   }
 );
+
 
 
 // Start the API server
