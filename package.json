@@ -20,6 +20,7 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "chart.js": "^3.3.0",
     "connect-mongo": "^4.4.1",
     "express": "^4.16.3",
