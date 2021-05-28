@@ -10,6 +10,8 @@ import AlgProjects from "./pages/AlgProjects";
 import Contact from "./pages/Contact/Contact";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/Footer/Footer';
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
         </Switch>
       {/* </div> */}
+      <Footer />
     </Router>
   );
 }

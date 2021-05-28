@@ -5,10 +5,10 @@ import Navbar1 from '../components/Navbar1/Navbar1';
 
 function About() {
   return (
-    <div className="background">
+    <div className="background ">
     <Navbar1/>
-    <div className="container">
-      <div className="about animate__animated animate__fadeIn">
+    <div className="container ">
+      <div className="about animate__animated animate__fadeIn  p-3 mb-2 bg-transparent text-dark">
         <h2>Why we developed Git.Commit</h2>
         <div>
           <p>
