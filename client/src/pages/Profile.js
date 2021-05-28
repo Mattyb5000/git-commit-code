@@ -6,6 +6,7 @@ import API from "../utils/API";
 import Chart from "../components/Chart";
 import ProjectForm from "../components/ProjectForm";
 import { Form } from "react-bootstrap";
+// import "./Profile.css";
 
 const Profile = () => {
 	const [userProjects, setUserProjects] = useState([]);
@@ -53,9 +54,9 @@ console.log("hello");
 			</div>
 			<div className="container-fluid">
 				<div className="row d-flex justify-content-around"></div>
-				<div className="col-12, col-md-12 table table-dark">
-					<table className="table-bordered  projectTable w-100">
-						<thead className="table-info">
+				<div className="col-12, col-md-12 ">
+					<table className="table-bordered  projectTable w-100 table table-dark">
+						<thead className="table-info table table-dark">
 							<tr>
 								
 								<th scope="col">Project Name</th>
@@ -91,10 +92,10 @@ console.log("hello");
 
 				<div className="col-12, col-md-12"></div>
 			</div>
-			<h5 className="pageTitle text-center pt-5">My progress</h5>
-      {/* <ProjectForm /> */}
+		
+      <ProjectForm />
       
-			{/* <Chart /> */}
+			<Chart />
 		</div>
 	);
 };
