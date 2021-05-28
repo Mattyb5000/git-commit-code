@@ -5,6 +5,7 @@ import Navbar2 from "../components/Navbar2/Navbar2";
 import FakeAPI from "../utils/FakeAPI";
 import FakeUserAPI from "../utils/FakeUserAPI";
 import Chart from "../components/Chart";
+import ProjectForm from "../components/ProjectForm";
 
 const Profile = () => {
 	const [userProjects, setUserProjects] = useState([]);
@@ -45,6 +46,7 @@ const Profile = () => {
 	return (
 		<div>
 			<Navbar2 />
+			<ProjectForm />
 			{/* <h5 className="pageTitle text-center pt-5">My Profile</h5>
 			<div className="container-fluid">
 				<div className="row d-flex">
