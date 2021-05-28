@@ -56,14 +56,14 @@ const Profile = () => {
 	//.then((res) => setProjects(res.data))
 
 	return (
-		<div>
+		<div className="brick_background">
 			<Navbar2 />
 			<div className="container-fluid pageTitle">
 				<h5 className="pageTitle text-center pt-5">My Profile</h5>
 			</div>
 			<div className="container-fluid">
 				<div className="row d-flex justify-content-around"></div>
-				<div className="col-12, col-md-12">
+				<div className="col-12, col-md-12 table table-dark">
 					<table className="table-bordered  projectTable w-100">
 						<thead className="table-info">
 							<tr>
@@ -101,7 +101,7 @@ const Profile = () => {
 
 				<div className="col-12, col-md-12"></div>
 			</div>
-
+			<h5 className="pageTitle text-center pt-5">My progress</h5>
 			<Chart />
 		</div>
 	);
