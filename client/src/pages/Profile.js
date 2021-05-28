@@ -64,7 +64,7 @@ const Profile = () => {
 			<div className="container-fluid">
 				<div className="row d-flex justify-content-around"></div>
 				<div className="col-12, col-md-12">
-					<table class="table-bordered  projectTable w-100">
+					<table className="table-bordered  projectTable w-100">
 						<thead className="table-info">
 							<tr>
 								{/* <th scope="col">Project Number</th> */}
