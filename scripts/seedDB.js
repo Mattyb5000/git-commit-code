@@ -148,6 +148,7 @@ const userSeed = [
 	},
 ];
 
+
 const seedIt = () => {
 	db.Project.deleteMany({})
 		.then(() => db.Project.collection.insertMany(projectSeed))
@@ -183,3 +184,33 @@ const seedIt = () => {
 };
 
 seedIt();
+
+const projectFormSeed = [
+	{
+		projectname: "Algorithm Binary Search",
+		username: "Bird",
+		url: "github/bigbird.com",
+
+		projectsInProgress: [
+				// project_id: [],
+		],
+		projectsCompleted: [
+			// {
+			// 	project_id: [],
+			// 	deployed_url: "amazon.com",
+			// },
+		],
+	},
+];
+
+db.ProjectForm
+  .remove({})
+  .then(() => db.Book.collection.insertMany(projectFormSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });

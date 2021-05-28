@@ -4,7 +4,7 @@ import Navbar2 from "../components/Navbar2/Navbar2";
 // import ProjectCard from "../components/ProjectCard/index.js";
 import API from "../utils/API";
 import Chart from "../components/Chart";
-
+import ProjectForm from "../components/ProjectForm";
 
 const Profile = () => {
 	const [userProjects, setUserProjects] = useState([]);
@@ -105,12 +105,39 @@ const Profile = () => {
 			<Chart />
 		</div>
 	);
+
+  // 	API.getProjects()
+  // 		.then((res) => {
+  // 			console.log(res.data);
+  // 			setProjects(res.data);
+  // 		})
+  // 		.catch((err) => console.log(err));
+  // };
+
+  // console.log("Projects", projects);
+
+  // {(req.session.user_id)}
+
+  // const userProj = user[0].projects;
+  // console.log(userProj);
+
+  // const newProjectArray = userProj.map((userProj) =>
+  // 	projectArray.filter((project) => project.project_id === userProj)
+  // );
+
+  // console.log(newProjectArray);
+  // setProjects(newProjectArray);
+  // console.log(projects);
+
+  //once I'm using the API, the projects need to be sorted in setProjects function within curly braces
+  //.then((res) => setProjects(res.data))
+
 };
 
 export default Profile;
 
 // {
-	/* <h5 className="pageTitle text-center pt-5">My Profile</h5>
+/* <h5 className="pageTitle text-center pt-5">My Profile</h5>
 			<div className="container-fluid">
 				<div className="row d-flex">
 					<div className="col-sm-7">
