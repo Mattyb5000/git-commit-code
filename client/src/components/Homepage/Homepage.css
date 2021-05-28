@@ -1,5 +1,5 @@
 .background {
-  height: 100vh;
+  /* height: 100vh; */
   background: lightblue url("./background.jpg");
   background-size: cover; /* or contain depending on what you want */
   background-position: center fixed;

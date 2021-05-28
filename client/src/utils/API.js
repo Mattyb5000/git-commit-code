@@ -13,6 +13,14 @@ export default {
   deleteProject: function(id) {
     return axios.delete("/api/projects/" + id);
   },
+
+  getUsers: function() {
+    return axios.get("/api/users/get-users");
+  },
+
+  addUserProjectInProgress: function(id) {
+    return axios.put("/api/users/new-project", {id});
+  }
   // Saves a project to the database
   // saveProject: function(projectData) {
   //   return axios.post("/api/projects", projectData);
