@@ -23,6 +23,7 @@ class Chart extends Component {
   render() {
     return (
       <div className='container'>
+        	<h5 className="pageTitle text-center pt-5">My progress</h5>
           <Bar data={data} />
       </div>
     );
