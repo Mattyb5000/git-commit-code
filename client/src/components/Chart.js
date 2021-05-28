@@ -14,11 +14,6 @@ const data = {
         data: [2, 3],
         backgroundColor: 'rgb(54, 162, 235)',
       },
-    //   {
-    //     label: '# of Green Votes',
-    //     data: [3, 10, 13, 15, 22, 30],
-    //     backgroundColor: 'rgb(75, 192, 192)',
-    //   },
     ],
   };
 class Chart extends Component {

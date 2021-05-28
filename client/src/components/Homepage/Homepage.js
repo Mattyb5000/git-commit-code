@@ -18,10 +18,11 @@ function Homepage() {
             projects page to keep polishing your skills!
           </p>
         </div>
-        <Link to="/login" type="button" class="btn btn-lg btn-primary" disabled>
+        <Link to="/login" type="button" className="btn btn-lg btn-primary" disabled>
           Signup
         </Link>
       </div>
+      
     </div>
   );
 }
