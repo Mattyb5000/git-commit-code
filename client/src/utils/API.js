@@ -3,6 +3,7 @@ import axios from "axios";
 export default {
   // Gets all projects
   getProjects: function() {
+    console.log("you're in getProjects");
     return axios.get("/api/projects/");
   },
   // Gets the project with the given id
@@ -23,19 +24,19 @@ export default {
   },
 
   getProjectForms: function() {
-    return axios.get("/api/ProjectForms");
+    return axios.get("/api/projectForms/");
   },
   // Gets the ProjectForm with the given id
   getProjectForm: function(id) {
-    return axios.get("/api/ProjectForms/" + id);
+    return axios.get("/api/projectForms/" + id);
   },
   // Deletes the ProjectForm with the given id
   deleteProjectForm: function(id) {
-    return axios.delete("/api/ProjectForms/" + id);
+    return axios.delete("/api/projectForms/" + id);
   },
   // Saves a ProjectForm to the database
   saveProjectForm: function(projectFormData) {
-    return axios.post("/api/ProjectForms", projectFormData);
+    return axios.post("/api/projectForms", projectFormData);
   }
 };
 

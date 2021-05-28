@@ -2,7 +2,7 @@ const db = require("../models");
 
 // Defining methods for the projectFormController
 module.exports = {
-  findAll: function(req, res) {
+  find: function(req, res) {
     db.projectForm
       .find(req.query)
       .sort({ date: -1 })

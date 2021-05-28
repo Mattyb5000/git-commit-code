@@ -148,6 +148,15 @@ const userSeed = [
 	},
 ];
 
+const projectFormSeed = [
+	{
+		projectname: "Algorithm Binary Search",
+		username: "Bird",
+		url: "github/bigbird.com",
+		projectsInProgress: [],
+		projectsCompleted: [],
+	},
+];
 
 const seedIt = () => {
 	db.Project.deleteMany({})
@@ -162,17 +171,25 @@ const seedIt = () => {
 				userSeed[2].projectsInProgress.push(data[5]._id, data[6]._id);
 				userSeed[2].projectsCompleted.push(data[2]._id, data[3]._id);
 
-				db.User.deleteMany({})
-					.then(() => db.User.collection.insertMany(userSeed))
+			db.User.deleteMany({})
+				.then(() => db.User.collection.insertMany(userSeed))
 
-					.then((data) => {
+				.then((data) => {
 						console.log(" User data posted!");
 						// process.exit(0);
-					})
-					.catch((err) => {
-						console.error(err);
-						process.exit(1);
-					});
+				});
+
+				db.ProjectForm.deleteMany({})
+  					.then(() => db.ProjectForm.collection.insertMany(projectFormSeed))
+  				.then((data) => {
+    			console.log("projectForm data inserted!");
+    			// process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+				
 			});
 
 			//process.exit(0);
@@ -184,33 +201,3 @@ const seedIt = () => {
 };
 
 seedIt();
-
-const projectFormSeed = [
-	{
-		projectname: "Algorithm Binary Search",
-		username: "Bird",
-		url: "github/bigbird.com",
-
-		projectsInProgress: [
-				// project_id: [],
-		],
-		projectsCompleted: [
-			// {
-			// 	project_id: [],
-			// 	deployed_url: "amazon.com",
-			// },
-		],
-	},
-];
-
-db.ProjectForm
-  .remove({})
-  .then(() => db.Book.collection.insertMany(projectFormSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });

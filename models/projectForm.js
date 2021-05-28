@@ -8,6 +8,6 @@ const ProjectFormSchema = new Schema({
 
 });
 
-const ProjectForm = mongoose.model("ProjectForm", ProjectForm);
+const ProjectForm = mongoose.model("ProjectForm", ProjectFormSchema);
 
 module.exports = ProjectForm;

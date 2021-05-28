@@ -6,7 +6,7 @@ const projectFormRoutes = require("./projectFormRoutes");
 
 router.use("/users", userRoutes);
 router.use("/projects", projectRoutes);
-router.use("/projectsForms", projectFormRoutes);
+router.use("/projectForms", projectFormRoutes);
 
 // For anything else, render the html page
 router.use(function(req, res) {
