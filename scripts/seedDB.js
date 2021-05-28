@@ -128,15 +128,13 @@ const userSeed = [
 		password: "123123",
 		email: "bigBird@gmail.com",
 		projectsInProgress: [
-			{
-				project_id: [],
-			},
+				// project_id: [],
 		],
 		projectsCompleted: [
-			{
-				project_id: [],
-				deployed_url: "amazon.com",
-			},
+			// {
+			// 	project_id: [],
+			// 	deployed_url: "amazon.com",
+			// },
 		],
 	},
 	{
@@ -145,15 +143,15 @@ const userSeed = [
 		password: "123123",
 		email: "myrtle@hotmail.com",
 		projectsInProgress: [
-			{
-				project_id: [],
-			},
+			
+				// project_id: [],
+			
 		],
 		projectsCompleted: [
-			{
-				project_id: [],
-				deployed_url: "amazon.com",
-			},
+			// {
+			// 	project_id: [],
+			// 	deployed_url: "amazon.com",
+			// },
 		],
 	},
 	{
@@ -162,15 +160,15 @@ const userSeed = [
 		password: "123123",
 		email: "everyonelovesme@gmail.com",
 		projectsInProgress: [
-			{
-				project_id: [],
-			},
+			// {
+			// 	project_id: [],
+			// },
 		],
 		projectsCompleted: [
-			{
-				project_id: [],
-				deployed_url: "amazon.com",
-			},
+			// {
+			// 	project_id: [],
+			// 	deployed_url: "amazon.com",
+			// },
 		],
 	},
 ];

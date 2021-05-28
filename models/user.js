@@ -39,13 +39,13 @@ const UserSchema = new Schema({
 		},
 	],
 
-  projectsComplete: [
+	projectsComplete: [
 		{
-        type: Schema.Types.ObjectId,
-			  ref: "Project",
-			  // deployed_url: String
-		}],
-	
+			type: Schema.Types.ObjectId,
+			ref: "Project",
+			// deployed_url: String
+		},
+	],
 
 	lastUpdated: Date,
 
@@ -67,25 +67,25 @@ const User = mongoose.model("User", UserSchema);
 module.exports = User;
 
 // projectsComplete: [
-	// 	{
-	// 		project_id: Number,
-	// 		deployed_url: String,
-	// 		required: false,
-	// 	},
-	// ],
+// 	{
+// 		project_id: Number,
+// 		deployed_url: String,
+// 		required: false,
+// 	},
+// ],
 
-	//or should we do this?
-	// projectsInProgress: [{
-	//   type: Schema.Types.ObjectId,
-	//   ref: "Project"
-	// }],
+//or should we do this?
+// projectsInProgress: [{
+//   type: Schema.Types.ObjectId,
+//   ref: "Project"
+// }],
 
-	// projectsComplete: [{
-	//   type: Schema.Types.ObjectId,
-	//   ref: "Project"
-	// }],
+// projectsComplete: [{
+//   type: Schema.Types.ObjectId,
+//   ref: "Project"
+// }],
 
-  // projectsInProgress: [{
-	//   project_id: Number,
-	//   required: false
-	// }],
+// projectsInProgress: [{
+//   project_id: Number,
+//   required: false
+// }],

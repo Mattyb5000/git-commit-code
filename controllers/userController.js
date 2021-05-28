@@ -1,5 +1,6 @@
 const db = require("../models");
 const { findOne } = require("../models/project");
+const { find } = require("../models/project");
 
 //create a new user
 module.exports = {
@@ -13,6 +14,7 @@ create: function(req, res) {
 
 find: async function(req,res) {
   db.User.find({})
+  .populate('projectsInProgress')
   .then(dbUser => res.json(dbUser))
   .catch(err => res.status(422).json(err));
 },
