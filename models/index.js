@@ -1,5 +1,6 @@
 module.exports = {
     Project: require("./project"),
-    User: require("./user")
+    User: require("./user"),
+    ProjectForm: require("./projectForm")
   };
   

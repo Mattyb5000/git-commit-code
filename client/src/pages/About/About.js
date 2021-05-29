@@ -1,10 +1,11 @@
 import React from "react";
-import "../App.css";
-import Navbar1 from '../components/Navbar1/Navbar1';
+// import "../App.css";
+import "./About.css"
+import Navbar1 from '../../components/Navbar1/Navbar1';
 
 function About() {
   return (
-    <div className="background ">
+    <div className="brick_background">
     <Navbar1/>
     <div className="container ">
       <div className="about animate__animated animate__fadeIn  p-3 mb-2 bg-transparent text-dark">

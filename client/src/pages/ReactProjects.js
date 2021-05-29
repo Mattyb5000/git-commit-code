@@ -3,11 +3,15 @@ import { useState, useEffect } from "react";
 import Navbar2 from "../components/Navbar2/Navbar2";
 import ProjectCard from "../components/ProjectCard/index.js";
 import API from "../utils/API";
+import {Modal, Button} from "react-bootstrap";
 
 const ReactProjects = () => {
 	// sets initial state of projects
 	const [projects, setProjects] = useState([]);
+	const [show, setShow] = useState(false);
 
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 	// loads all projects and sets them to projects
 	useEffect(() => {
 		loadProjects();
@@ -26,6 +30,15 @@ const ReactProjects = () => {
 				.catch((err) => console.log(err));
 		};
 		console.log("Is this projects", projects);	
+
+		const handleProjectSelect = id => {
+			console.log(id);
+	
+			API.addUserProjectInProgress(id).then((res) => {
+				console.log(res.data);
+				setShow(true);
+			});
+		};
 	
 	return (
 		<div>
@@ -38,6 +51,20 @@ const ReactProjects = () => {
 					))}
 				</div>
 			</div>
+			<Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
 		</div>
 	);
 };

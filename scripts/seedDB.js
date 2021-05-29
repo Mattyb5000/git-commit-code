@@ -127,49 +127,34 @@ const userSeed = [
 		lastName: "Bird",
 		password: "123123",
 		email: "bigBird@gmail.com",
-		projectsInProgress: [
-				// project_id: [],
-		],
-		projectsCompleted: [
-			// {
-			// 	project_id: [],
-			// 	deployed_url: "amazon.com",
-			// },
-		],
+		projectsInProgress: [],
+		projectsCompleted: [],
 	},
 	{
 		firstName: "Myrtle",
 		lastName: "Emerson",
 		password: "123123",
 		email: "myrtle@hotmail.com",
-		projectsInProgress: [
-			
-				// project_id: [],
-			
-		],
-		projectsCompleted: [
-			// {
-			// 	project_id: [],
-			// 	deployed_url: "amazon.com",
-			// },
-		],
+		projectsInProgress: [],
+		projectsCompleted: [],
 	},
 	{
 		firstName: "Bob",
 		lastName: "Ross",
 		password: "123123",
 		email: "everyonelovesme@gmail.com",
-		projectsInProgress: [
-			// {
-			// 	project_id: [],
-			// },
-		],
-		projectsCompleted: [
-			// {
-			// 	project_id: [],
-			// 	deployed_url: "amazon.com",
-			// },
-		],
+		projectsInProgress: [],
+		projectsCompleted: [],
+	},
+];
+
+const projectFormSeed = [
+	{
+		projectname: "Algorithm Binary Search",
+		username: "Bird",
+		url: "github/bigbird.com",
+		projectsInProgress: [],
+		projectsCompleted: [],
 	},
 ];
 
@@ -180,19 +165,31 @@ const seedIt = () => {
 			console.log(data.result.n + " Hell yeah! We did it! Sopee rocks!");
 			db.Project.find().then((data) => {
 				userSeed[0].projectsInProgress.push(data[2]._id, data[4]._id);
+				userSeed[0].projectsCompleted.push(data[8]._id, data[14]._id);
 				userSeed[1].projectsInProgress.push(data[3]._id);
+				userSeed[1].projectsCompleted.push(data[1]._id);
+				userSeed[2].projectsInProgress.push(data[5]._id, data[6]._id);
+				userSeed[2].projectsCompleted.push(data[2]._id, data[3]._id);
 
-				db.User.deleteMany({})
-					.then(() => db.User.collection.insertMany(userSeed))
+			db.User.deleteMany({})
+				.then(() => db.User.collection.insertMany(userSeed))
 
-					.then((data) => {
+				.then((data) => {
 						console.log(" User data posted!");
 						// process.exit(0);
-					})
-					.catch((err) => {
-						console.error(err);
-						process.exit(1);
-					});
+				});
+
+				db.ProjectForm.deleteMany({})
+  					.then(() => db.ProjectForm.collection.insertMany(projectFormSeed))
+  				.then((data) => {
+    			console.log("projectForm data inserted!");
+    			// process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+				
 			});
 
 			//process.exit(0);
