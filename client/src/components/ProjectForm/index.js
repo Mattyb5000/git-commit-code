@@ -53,9 +53,9 @@ function ProjectForms() {
     }
   };
   return (
-    <Container fluid>
+    <Container className="container">
       <Row>
-        <Col size="md-6">
+        <Col size="md-9">
           <form>
             <Input
               onChange={handleInputChange}
@@ -72,7 +72,7 @@ function ProjectForms() {
               name="url"
               placeholder="Deployed URL"
             />
-            <FormBtn
+            <FormBtn className=""
               disabled={!(formObject.projectname && formObject.username)}
               onClick={handleFormSubmit}
             >
