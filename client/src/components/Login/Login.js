@@ -8,14 +8,14 @@ function Login() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   function signupFunc() {
-    setLoggedIn(true);
-    console.log("logged in");
-  }
-
-  function signinFunc() {
-    setLoggedIn(true);
+    // setLoggedIn(true);
     console.log("signed up");
-  }
+  };
+
+  function loginFunc() {
+    // setLoggedIn(true);
+    console.log("logged in");
+  };
 
   return (
     <div className="brick_background">
@@ -89,11 +89,23 @@ function Login() {
                 </div>
               </div>
 
-              <button type="submit" class="signinBtn btn btn-primary btn-block">
+              <button
+                onClick={signupFunc()}
+                type="submit"
+                class="signinBtn btn btn-primary btn-block"
+              >
                 Sign Up
               </button>
             </form>
           </div>
+
+
+
+
+          
+
+
+
 
           {/* login */}
           <div className="col-6 text-center">
@@ -139,6 +151,7 @@ function Login() {
                 </div>
               </div>
               <button
+                onCLick={loginFunc()}
                 type="submit"
                 class=" signinBtn btn btn-primary btn-block"
               >
@@ -149,7 +162,6 @@ function Login() {
         </div>
       </div>
     </div>
-
   );
 }
 
