@@ -44,8 +44,8 @@ function ProjectForms() {
     event.preventDefault();
     if (formObject.projectname && formObject.username) {
       API.saveProjectForm({
-        title: formObject.projectname,
-        author: formObject.username,
+        projectname: formObject.projectname,
+        username: formObject.username,
         url: formObject.url
       })
         .then(res => loadProjectForms())
@@ -53,9 +53,9 @@ function ProjectForms() {
     }
   };
   return (
-    <Container className="container">
+    <Container className="fluid">
       <Row>
-        <Col size="md-9">
+        <Col size="sm-6">
           <form>
             <Input
               onChange={handleInputChange}
@@ -72,7 +72,7 @@ function ProjectForms() {
               name="url"
               placeholder="Deployed URL"
             />
-            <FormBtn className=""
+            <FormBtn 
               disabled={!(formObject.projectname && formObject.username)}
               onClick={handleFormSubmit}
             >
@@ -80,17 +80,17 @@ function ProjectForms() {
             </FormBtn>
           </form>
         </Col>
-        <Col size="md-6 md-6">
+        <Col size="sm-6">
           {projectForms.length ? (
             <List>
               {projectForms.map(projectForm => (
                 <ListItem key={projectForm._id}>
-                  <Link to={"/completedprojects" + projectForms._id}>
+                  <Link to={"/completedprojects/" + projectForm._id}>
                     <strong>
                       {projectForm.projectname} by {projectForm.username}
                     </strong>
                   </Link>
-                  <DeleteBtn onClick={() => deleteProjectForm(projectForms._id)} />
+                  <DeleteBtn onClick={() => deleteProjectForm(projectForm._id)} />
                 </ListItem>
               ))}
             </List>
