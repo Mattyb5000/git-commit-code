@@ -8,6 +8,7 @@ import JavaScriptProjects from "./pages/JavaScriptProjects";
 import ReactProjects from "./pages/ReactProjects";
 import AlgProjects from "./pages/AlgProjects";
 import Contact from "./pages/Contact/Contact";
+import CompletedProjects from "./pages/CompletedProjects";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer/Footer';
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/jsprojects" component={JavaScriptProjects} />
           <Route exact path="/reactprojects" component={ReactProjects} />
           <Route exact path="/algprojects" component={AlgProjects} />
+          <Route exact path="/completedprojects" component-={CompletedProjects}/>
           <Route exact path="/contact" component={Contact} />
         </Switch>
       {/* </div> */}

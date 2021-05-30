@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 
 function Posted(props) {
@@ -19,11 +18,9 @@ function Posted(props) {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
               <h1>
                 {ProjectForm.projectname} by {ProjectForm.username}
               </h1>
-            </Jumbotron>
           </Col>
         </Row>
         <Row>
@@ -38,7 +35,7 @@ function Posted(props) {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to My Profile</Link>
+            <Link to="/profile">← Back to My Profile</Link>
           </Col>
         </Row>
       </Container>
