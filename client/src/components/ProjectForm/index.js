@@ -46,7 +46,7 @@ function ProjectForms() {
       API.saveProjectForm({
         title: formObject.projectname,
         author: formObject.username,
-        synopsis: formObject.url
+        url: formObject.url
       })
         .then(res => loadProjectForms())
         .catch(err => console.log(err));
@@ -95,7 +95,7 @@ function ProjectForms() {
               ))}
             </List>
           ) : (
-            <h3>No Results to Display</h3>
+            <h3></h3>
           )}
         </Col>
       </Row>
