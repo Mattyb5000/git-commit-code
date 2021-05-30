@@ -156,6 +156,20 @@ const projectFormSeed = [
 		projectsInProgress: [],
 		projectsCompleted: [],
 	},
+	{
+		projectname: "Rat in a Maze",
+		username: "Bird",
+		url: "github/bigbird.com",
+		projectsInProgress: [],
+		projectsCompleted: [],
+	},
+	{
+		projectname: "JavaScript Quiz",
+		username: "Bird",
+		url: "github/bigbird.com",
+		projectsInProgress: [],
+		projectsCompleted: [],
+	},
 ];
 
 const seedIt = () => {
