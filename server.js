@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3001;
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
-// !  process.env.MONGODB_URI not working???? possibly because atlas db is not running
+
 const sessionStore = MongoStore.create({
   mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost/gitcommit_db',
   collection: "users",

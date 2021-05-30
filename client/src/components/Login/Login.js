@@ -7,15 +7,43 @@ function Login() {
 
   const [loggedIn, setLoggedIn] = useState(false);
 
-  function signupFunc() {
-    // setLoggedIn(true);
-    console.log("signed up");
+  const [values, setValues] = useState({
+    email: "",
+    firstName: "",
+    lastName: "",
+    password: "",
+  });
+
+  const handleEmailInputChange = (event) => {
+    setValues({ ...values, email: event.target.value });
+  };
+  const handleFirstNameInputChange = (event) => {
+    setValues({ ...values, firstName: event.target.value });
+  };
+  const handleLastNameInputChange = (event) => {
+    setValues({ ...values, lastName: event.target.value });
+  };
+  const handlePasswordInputChange = (event) => {
+    setValues({ ...values, password: event.target.value });
   };
 
-  function loginFunc() {
-    // setLoggedIn(true);
-    console.log("logged in");
-  };
+  const loginFunc = (event) => {
+    event.preventDefault();
+    fetch("/api/users/login")
+      .then((response) => response.json())
+      .then((data) => setLoggedIn(true))
+      .then(console.log("you are now logged in!!!"))
+      .catch(console.log("something went wrong logging in"));
+  }
+
+  const signupFunc = (event) => {
+    event.preventDefault();
+    fetch("/api/users/")
+      .then((response) => response.json())
+      .then((data) => setLoggedIn(true))
+      .then(console.log("you are now signed up!!!"))
+      .catch(console.log("something went wrong signing up"));
+  }
 
   return (
     <div className="brick_background">
@@ -25,17 +53,23 @@ function Login() {
           {/* Signup */}
           <div className="form col-6 text-center">
             <h1 className="title">Signup</h1>
-            <form>
+            <form onSubmit={signupFunc}>
               <div className="form-outline mb-4">
-                <input type="email" id="form1Example1" className="form-control" />
+                <input
+                 onChange={handleEmailInputChange}
+                  type="email"
+                  value={values.email}
+                  className="form-control"
+                />
                 <label className="form-label center-text" for="form1Example1">
                   Email address
                 </label>
               </div>
               <div className="form-outline mb-4">
                 <input
+                  onChange={handleFirstNameInputChange}
+                  value={values.firstName}
                   type="firstName"
-                  id="form1Example1"
                   className="form-control"
                   id="firstName-signup"
                 />
@@ -45,21 +79,23 @@ function Login() {
               </div>
               <div className="form-outline mb-4">
                 <input
+                  onChange={handleLastNameInputChange}
+                  value={values.lastName}
                   type="lastName"
-                  id="form1Example1"
-                  class="form-control"
+                  className="form-control"
                   id="lastName-signup"
                 />
-                <label class="form-label" for="form1Example1">
+                <label className="form-label" for="form1Example1">
                   Last Name
                 </label>
               </div>
 
               <div className="form-outline mb-4">
                 <input
+                 onChange={handlePasswordInputChange}
+                  value={values.password}
                   type="password"
-                  id="form1Example2"
-                  class="form-control"
+                  className="form-control"
                   id="password-signup"
                 />
                 <label className="form-label" for="form1Example2">
@@ -74,7 +110,6 @@ function Login() {
                       className="form-check-input"
                       type="checkbox"
                       value=""
-                      id="form1Example3"
                       checked
                     />
                     <label className="form-check-label" for="form1Example3">
@@ -90,7 +125,7 @@ function Login() {
               </div>
 
               <button
-                onClick={signupFunc()}
+                
                 type="submit"
                 className="signinBtn btn btn-primary btn-block"
               >
@@ -99,25 +134,19 @@ function Login() {
             </form>
           </div>
 
-
-
           {/* login */}
           <div className="col-6 text-center">
             <h1 className="title">Login</h1>
-            <form>
+            <form   onSubmit={loginFunc}>
               <div className="form-outline mb-4">
-                <input type="email" id="form1Example1" class="form-control" />
+                <input type="email" className="form-control" />
                 <label className="form-label" for="form1Example1">
                   Email address
                 </label>
               </div>
 
               <div className="form-outline mb-4">
-                <input
-                  type="password"
-                  id="form1Example2"
-                  className="form-control"
-                />
+                <input type="password" className="form-control" />
                 <label className="form-label" for="form1Example2">
                   Password
                 </label>
@@ -130,7 +159,6 @@ function Login() {
                       className="form-check-input"
                       type="checkbox"
                       value=""
-                      id="form1Example3"
                       checked
                     />
                     <label className="form-check-label" for="form1Example3">
@@ -145,7 +173,7 @@ function Login() {
                 </div>
               </div>
               <button
-                onCLick={loginFunc()}
+              
                 type="submit"
                 className=" signinBtn btn btn-primary btn-block"
               >
