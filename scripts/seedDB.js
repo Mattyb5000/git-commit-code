@@ -66,6 +66,7 @@ const projectSeed = [
 		image: "https://i.imgur.com/bEdgven.jpg",
 	},
 	{
+		language: "React",
 		title: "Rat in a Maze",
 		link: "https://www.crio.do/projects/react-ratinamaze/",
 		image: "https://i.imgur.com/bEdgven.jpg",
@@ -156,13 +157,27 @@ const projectFormSeed = [
 		projectsInProgress: [],
 		projectsCompleted: [],
 	},
+	{
+		projectname: "Rat in a Maze",
+		username: "Bird",
+		url: "github/bigbird.com",
+		projectsInProgress: [],
+		projectsCompleted: [],
+	},
+	{
+		projectname: "JavaScript Quiz",
+		username: "Bird",
+		url: "github/bigbird.com",
+		projectsInProgress: [],
+		projectsCompleted: [],
+	},
 ];
 
 const seedIt = () => {
 	db.Project.deleteMany({})
 		.then(() => db.Project.collection.insertMany(projectSeed))
 		.then((data) => {
-			console.log(data.result.n + " Hell yeah! We did it! Sopee rocks!");
+			console.log(data.result.n + " Hell yeah! We did it! Liz rocks!");
 			db.Project.find().then((data) => {
 				userSeed[0].projectsInProgress.push(data[2]._id, data[4]._id);
 				userSeed[0].projectsCompleted.push(data[8]._id, data[14]._id);

@@ -46,8 +46,9 @@ const ReactProjects = () => {
 			<h5 className="pageTitle text-center pt-5">React Projects</h5>
 			<div className="container-fluid">
 				<div className="row d-flex justify-content-around">
-					{projects.map((reactProj) => (
-						<ProjectCard {...reactProj} />
+				{projects.map((reactProj) => (
+							<ProjectCard {...reactProj} key={reactProj._id}
+							handleProjectSelect={handleProjectSelect} />
 					))}
 				</div>
 			</div>

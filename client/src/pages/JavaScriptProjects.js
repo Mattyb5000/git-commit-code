@@ -29,7 +29,7 @@ const JavaScriptProjects = () => {
 			})
 			.catch((err) => console.log(err));
 	};
-	console.log("Is this projects", projects);
+	console.log("These are the js projects on the js project page", projects);
 
 	const handleProjectSelect = id => {
 		console.log(id);
@@ -47,7 +47,8 @@ const JavaScriptProjects = () => {
 			<div className="container-fluid">
 				<div className="row d-flex justify-content-around">
 						{projects.map((jsProj) => (
-							<ProjectCard {...jsProj}
+							<ProjectCard {...jsProj} key={jsProj._id}
+							
 							handleProjectSelect={handleProjectSelect} />
 						))}
 					
@@ -55,9 +56,9 @@ const JavaScriptProjects = () => {
 			</div>
 			<Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>You have added this project to your Projects in Progress</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>Please visit your profile page to see your Projects in Progress</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

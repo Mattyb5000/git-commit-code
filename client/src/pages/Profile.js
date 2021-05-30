@@ -4,7 +4,7 @@ import Navbar2 from "../components/Navbar2/Navbar2";
 // import ProjectCard from "../components/ProjectCard/index.js";
 import API from "../utils/API";
 import Chart from "../components/Chart";
-import ProjectForm from "../components/ProjectForm";
+// import ProjectForm from "../components/ProjectForm";
 import { Form } from "react-bootstrap";
 // import "./Profile.css";
 
@@ -93,7 +93,7 @@ console.log("hello");
 				<div className="col-12, col-md-12"></div>
 			</div>
 		
-      <ProjectForm />
+      {/* <ProjectForm /> */}
       
 			<Chart />
 		</div>
