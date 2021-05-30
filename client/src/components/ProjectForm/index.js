@@ -89,7 +89,7 @@ function ProjectForms() {
             <List>
               {projectForms.map(projectForm => (
                 <ListItem key={projectForm._id}>
-                  <Link to={"/completedprojects/" + projectForm._id}>
+                  <Link to={"/projectForm/" + projectForm._id}>
                     <strong>
                       {projectForm.projectname} by {projectForm.username}
                     </strong>
