@@ -8,9 +8,12 @@ import JavaScriptProjects from "./pages/JavaScriptProjects";
 import ReactProjects from "./pages/ReactProjects";
 import AlgProjects from "./pages/AlgProjects";
 import Contact from "./pages/Contact/Contact";
+import CompletedProjects from "./pages/CompletedProjects";
+// import ProjectForm from "./components/ProjectForm/index";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer/Footer';
+
 
 
 function App() {
@@ -33,3 +36,5 @@ function App() {
 }
 
 export default App;
+
+
