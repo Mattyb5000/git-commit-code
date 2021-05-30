@@ -7,7 +7,7 @@ function ProjectCard(props) {
 	return (
 		<div className="col-sm-4 d-flex justify-content-center" key={_id}>
 			<div className="card mt-5 mb-5">
-				<div className="card-body" >
+				<div className="card-body">
 					{/* project name */}
 					<div className="card-header cardHeader">
 						<h5 className="projectTitle">
@@ -29,8 +29,14 @@ function ProjectCard(props) {
 						</a>
 					</li>
 					<li className="list-group-item" key={_id}>
-						<button onClick={() => props.handleProjectSelect(_id)} className="btn btn-secondary selectProjectBut" >
-														Select Project
+						<button
+							onClick={() => {
+								alert("you clicked2");
+								props.handleProjectSelect(_id);
+							}}
+							className="btn btn-secondary selectProjectBut"
+						>
+							Select Project
 						</button>
 					</li>
 				</ul>
@@ -38,6 +44,5 @@ function ProjectCard(props) {
 		</div>
 	);
 }
-
 
 export default ProjectCard;

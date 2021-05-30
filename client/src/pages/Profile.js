@@ -14,6 +14,7 @@ const Profile = () => {
 
 	// loads all projects and sets them to projects
 	useEffect(() => {
+		console.log("you are in useEffect on profile.js");
 		loadUserProjects();
 	}, []);
 

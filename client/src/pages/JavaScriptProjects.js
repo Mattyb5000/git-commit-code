@@ -32,11 +32,10 @@ const JavaScriptProjects = () => {
 	console.log("These are the js projects on the js project page", projects);
 
 	const handleProjectSelect = id => {
-		console.log(id);
 
 		API.addUserProjectInProgress(id).then((res) => {
-			console.log(res.data);
-			setShow(true);
+			alert(res);
+			// setShow(true);
 		});
 	};
 
@@ -54,7 +53,7 @@ const JavaScriptProjects = () => {
 					
 				</div>
 			</div>
-			<Modal show={show} onHide={handleClose}>
+			{/* <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>You have added this project to your Projects in Progress</Modal.Title>
         </Modal.Header>
@@ -67,7 +66,7 @@ const JavaScriptProjects = () => {
             Save Changes
           </Button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
 
 
 		</div>

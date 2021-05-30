@@ -32,6 +32,7 @@ const AlgProjects = () => {
 	console.log("Is this projects", projects);
 
 	const handleProjectSelect = id => {
+		console.log("in handleProjectSelect of algProjects");
 		console.log(id);
 
 		API.addUserProjectInProgress(id).then((res) => {
