@@ -162,7 +162,7 @@ const seedIt = () => {
 	db.Project.deleteMany({})
 		.then(() => db.Project.collection.insertMany(projectSeed))
 		.then((data) => {
-			console.log(data.result.n + " Hell yeah! We did it! Sopee rocks!");
+			console.log(data.result.n + " Hell yeah! We did it! Liz rocks!");
 			db.Project.find().then((data) => {
 				userSeed[0].projectsInProgress.push(data[2]._id, data[4]._id);
 				userSeed[0].projectsCompleted.push(data[8]._id, data[14]._id);
