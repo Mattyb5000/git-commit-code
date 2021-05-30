@@ -23,31 +23,41 @@ function CompletedProjects(props) {
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1>
-              {projectForm.projectname} by {projectForm.username}
+            <h1>Great Job, 
+              {projectForm.username}! Your Hard Work Will Pay Off!
             </h1>
           </Jumbotron>
         </Col>
       </Row>
       <Row>
-        <Col size="md-10 md-offset-1">
-          <article>
-            <h1>URL</h1>
-            <p>
-              {projectForm.url}
-            </p>
-          </article>
+        <Col size="md-12">
+          <Jumbotron>
+            <h1>
+            {projectForm.projectname} is a tough project. 
+            </h1>
+          </Jumbotron>
         </Col>
       </Row>
+     
+      <Jumbotron>
+      <Row>
+      <Col size="md-12">
+    
+            <p>
+            <Link to="/profile"><h2>← Back to My Profile</h2></Link>
+            </p>
+   
+        </Col>
+      </Row>
+      </Jumbotron>
       <Row>
         <Col size="md-2">
-          <Link to="/profile">← Back to My Profile</Link>
+      
         </Col>
       </Row>
     </Container>
   );
 }
-
 
 export default CompletedProjects;
 
