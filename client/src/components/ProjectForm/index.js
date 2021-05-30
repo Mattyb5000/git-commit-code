@@ -6,6 +6,7 @@ import { List, ListItem } from "../List";
 import { Link } from "react-router-dom";
 import DeleteBtn from "../DeleteBtn";
 
+
 function ProjectForms() {
   // Setting our component's initial state
   const [projectForms, setProjectForms] = useState([])
@@ -44,18 +45,21 @@ function ProjectForms() {
     event.preventDefault();
     if (formObject.projectname && formObject.username) {
       API.saveProjectForm({
-        title: formObject.projectname,
-        author: formObject.username,
-        synopsis: formObject.url
+        projectname: formObject.projectname,
+        username: formObject.username,
+        url: formObject.url
       })
         .then(res => loadProjectForms())
         .catch(err => console.log(err));
     }
   };
   return (
-    <Container className="container">
+    <Container fluid>
       <Row>
-        <Col size="md-9">
+        <Col size="sm-12">
+       
+        <h3>Enter Your Project Here:</h3>
+      
           <form>
             <Input
               onChange={handleInputChange}
@@ -72,7 +76,7 @@ function ProjectForms() {
               name="url"
               placeholder="Deployed URL"
             />
-            <FormBtn className=""
+            <FormBtn 
               disabled={!(formObject.projectname && formObject.username)}
               onClick={handleFormSubmit}
             >
@@ -80,22 +84,23 @@ function ProjectForms() {
             </FormBtn>
           </form>
         </Col>
-        <Col size="md-6 md-6">
+        <Col size="sm-12">
           {projectForms.length ? (
             <List>
               {projectForms.map(projectForm => (
                 <ListItem key={projectForm._id}>
-                  <Link to={"/projectForms/" + projectForms._id}>
+                  <Link to={"/projectForm/" + projectForm._id}>
                     <strong>
                       {projectForm.projectname} by {projectForm.username}
                     </strong>
                   </Link>
-                  <DeleteBtn onClick={() => deleteProjectForm(projectForms._id)} />
+                  <DeleteBtn onClick={() => deleteProjectForm(projectForm._id)} />
                 </ListItem>
               ))}
             </List>
+            
           ) : (
-            <h3>No Results to Display</h3>
+            <h3>No Project to Display</h3>
           )}
         </Col>
       </Row>

@@ -24,7 +24,7 @@ export default {
   },
 
   getProjectForms: function() {
-    return axios.get("/api/projectForms/");
+    return axios.get("/api/projectForms");
   },
   // Gets the ProjectForm with the given id
   getProjectForm: function(id) {

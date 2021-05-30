@@ -46,8 +46,10 @@ const AlgProjects = () => {
 			<h5 className="pageTitle text-center pt-5">Algorithms Practice</h5>
 			<div className="container-fluid">
 				<div className="row d-flex justify-content-around">
-					{projects.map((algProj) => (
-						<ProjectCard {...algProj} handleProjectSelect={handleProjectSelect} />
+				{projects.map((algProj) => (
+							<ProjectCard {...algProj} key={algProj._id}
+					
+						 handleProjectSelect={handleProjectSelect} />
 					))}
 				</div>
 			</div>

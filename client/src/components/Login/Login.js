@@ -152,23 +152,23 @@ function Login() {
                 </label>
               </div>
 
-              <div class="row mb-4">
-                <div class="col d-flex justify-content-center">
-                  <div class="form-check">
+              <div className="row mb-4">
+                <div className="col d-flex justify-content-center">
+                  <div className="form-check">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="checkbox"
                       value=""
                       checked
                     />
-                    <label class="form-check-label" for="form1Example3">
+                    <label className="form-check-label" for="form1Example3">
                       {" "}
                       Remember me{" "}
                     </label>
                   </div>
                 </div>
 
-                <div class="col">
+                <div className="col">
                   <a href="#!">Forgot password?</a>
                 </div>
               </div>

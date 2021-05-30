@@ -2,12 +2,12 @@ import React from "react";
 import "./style.css";
 
 function ProjectCard(props) {
-	const { _id, title, link, image } = props;
+	const { _id, title, link, image, language } = props;
 
 	return (
-		<div className="col-sm-4 d-flex justify-content-center">
+		<div className="col-sm-4 d-flex justify-content-center" key={_id}>
 			<div className="card mt-5 mb-5">
-				<div className="card-body">
+				<div className="card-body" >
 					{/* project name */}
 					<div className="card-header cardHeader">
 						<h5 className="projectTitle">
@@ -28,10 +28,9 @@ function ProjectCard(props) {
 							Click here for link
 						</a>
 					</li>
-					<li className="list-group-item">
-						<button onClick={() => props.handleProjectSelect(_id)} className="btn btn-secondary selectProjectBut"
-						>
-							Select Project
+					<li className="list-group-item" key={_id}>
+						<button onClick={() => props.handleProjectSelect(_id)} className="btn btn-secondary selectProjectBut" >
+														Select Project
 						</button>
 					</li>
 				</ul>
