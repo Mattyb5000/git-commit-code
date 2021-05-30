@@ -66,6 +66,7 @@ const projectSeed = [
 		image: "https://i.imgur.com/bEdgven.jpg",
 	},
 	{
+		language: "React",
 		title: "Rat in a Maze",
 		link: "https://www.crio.do/projects/react-ratinamaze/",
 		image: "https://i.imgur.com/bEdgven.jpg",
