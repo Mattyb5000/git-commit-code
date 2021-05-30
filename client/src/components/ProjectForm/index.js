@@ -95,7 +95,7 @@ function ProjectForms() {
               ))}
             </List>
           ) : (
-            <h3></h3>
+            <h6>No Project to Display</h6>
           )}
         </Col>
       </Row>
