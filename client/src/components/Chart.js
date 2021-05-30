@@ -1,25 +1,49 @@
 import React, { Component } from "react";
 import { Bar } from "react-chartjs-2";
-// what do I need to import to get the project status data?
+import API from "../utils/API";
 
 const data = {
     labels: ['JavaScript', 'Algorithms', 'React'],
     datasets: [
       {
         label: 'In-progress',
-        // need to pull in-prog js, alg, react totals ($size) from DB
+        // need to pull in-prog js, alg, react totals from DB
         data: [12, 19, 2],
         backgroundColor: 'rgb(255, 99, 132)',
       },
       {
         label: 'Completed',
-         // need to pull completed js, alg, react totals ($size) from DB
+         // need to pull completed js, alg, react totals from DB
         data: [2, 3, 4],
         backgroundColor: 'rgb(54, 162, 235)',
       },
     ],
   };
+
+
 class Chart extends Component {
+  state = {
+    inProgress: [],
+    completed: [],
+  };
+
+  componentDidMount() {
+    API.getUsers().then((res) => {
+      console.log("array of user objects", res.data)
+      console.log("states' array contents", this.state)
+      // const projectsInProgress = res.data;
+      const totalCompleted = res.data[1].projectsCompleted.length;
+      const totalInProg = res.data[0].projectsInProgress.length;
+
+      console.log("total completed", totalCompleted)
+      console.log("total in progress", totalInProg)
+    
+      this.setState({
+        inProgress: totalInProg,
+        completed: totalCompleted,
+      })
+    })
+  }
   render() {
     return (
       <div className='container'>
@@ -29,5 +53,6 @@ class Chart extends Component {
     );
   }
 }
+
 
 export default Chart;
