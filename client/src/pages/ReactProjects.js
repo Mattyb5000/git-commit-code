@@ -41,7 +41,7 @@ const ReactProjects = () => {
 		};
 	
 	return (
-		<div>
+		<div className="brick_background">
 			<Navbar2 />
 			<h5 className="pageTitle text-center pt-5">React Projects</h5>
 			<div className="container-fluid">
