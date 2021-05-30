@@ -47,7 +47,8 @@ const JavaScriptProjects = () => {
 			<div className="container-fluid">
 				<div className="row d-flex justify-content-around">
 						{projects.map((jsProj) => (
-							<ProjectCard {...jsProj}
+							<ProjectCard {...jsProj} key={jsProj._id}
+							
 							handleProjectSelect={handleProjectSelect} />
 						))}
 					
