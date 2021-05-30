@@ -21,9 +21,9 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/jsprojects" component={JavaScriptProjects} />
-          <Route exact path="/reactprojects" component={ReactProjects} />
-          <Route exact path="/algprojects" component={AlgProjects} />
+          <Route exact path="/jsprojects/" component={JavaScriptProjects} />
+          <Route exact path="/reactprojects/" component={ReactProjects} />
+          <Route exact path="/algprojects/" component={AlgProjects} />
           <Route exact path="/contact" component={Contact} />
         </Switch>
       {/* </div> */}
