@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import API from "../utils/API";
 
-function Posted(props) {
+function CompletedProjects(props) {
   const [ProjectForm, setProjectForm] = useState({})
 
  
@@ -43,4 +43,4 @@ function Posted(props) {
   }
 
 
-export default Posted;
+export default CompletedProjects;
