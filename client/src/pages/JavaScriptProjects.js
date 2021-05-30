@@ -29,7 +29,7 @@ const JavaScriptProjects = () => {
 			})
 			.catch((err) => console.log(err));
 	};
-	console.log("Is this projects", projects);
+	console.log("These are the js projects on the js project page", projects);
 
 	const handleProjectSelect = id => {
 		console.log(id);
