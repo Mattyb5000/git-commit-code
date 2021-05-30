@@ -26,65 +26,65 @@ function Login() {
           <div className="form col-6 text-center">
             <h1 className="title">Signup</h1>
             <form>
-              <div class="form-outline mb-4">
-                <input type="email" id="form1Example1" class="form-control" />
-                <label class="form-label center-text" for="form1Example1">
+              <div className="form-outline mb-4">
+                <input type="email" id="form1Example1" className="form-control" />
+                <label className="form-label center-text" for="form1Example1">
                   Email address
                 </label>
               </div>
-              <div class="form-outline mb-4">
+              <div className="form-outline mb-4">
                 <input
                   type="firstName"
                   id="form1Example1"
-                  class="form-control"
+                  className="form-control"
                   id="firstName-signup"
                 />
-                <label class="form-label" for="form1Example1">
+                <label className="form-label" for="form1Example1">
                   First Name
                 </label>
               </div>
-              <div class="form-outline mb-4">
+              <div className="form-outline mb-4">
                 <input
                   type="lastName"
                   id="form1Example1"
-                  class="form-control"
+                  className="form-control"
                   id="lastName-signup"
                 />
-                <label class="form-label" for="form1Example1">
+                <label className="form-label" for="form1Example1">
                   Last Name
                 </label>
               </div>
 
-              <div class="form-outline mb-4">
+              <div className="form-outline mb-4">
                 <input
                   type="password"
                   id="form1Example2"
-                  class="form-control"
+                  className="form-control"
                   id="password-signup"
                 />
-                <label class="form-label" for="form1Example2">
+                <label className="form-label" for="form1Example2">
                   Password
                 </label>
               </div>
 
-              <div class="row mb-4">
-                <div class="col d-flex justify-content-center">
-                  <div class="form-check">
+              <div className="row mb-4">
+                <div className="col d-flex justify-content-center">
+                  <div className="form-check">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="checkbox"
                       value=""
                       id="form1Example3"
                       checked
                     />
-                    <label class="form-check-label" for="form1Example3">
+                    <label className="form-check-label" for="form1Example3">
                       {" "}
                       Remember me{" "}
                     </label>
                   </div>
                 </div>
 
-                <div class="col">
+                <div className="col">
                   <a href="#!">Forgot password?</a>
                 </div>
               </div>
@@ -92,7 +92,7 @@ function Login() {
               <button
                 onClick={signupFunc()}
                 type="submit"
-                class="signinBtn btn btn-primary btn-block"
+                className="signinBtn btn btn-primary btn-block"
               >
                 Sign Up
               </button>
@@ -111,20 +111,20 @@ function Login() {
           <div className="col-6 text-center">
             <h1 className="title">Login</h1>
             <form>
-              <div class="form-outline mb-4">
-                <input type="email" id="form1Example1" class="form-control" />
-                <label class="form-label" for="form1Example1">
+              <div className="form-outline mb-4">
+                <input type="email" id="form1Example1" className="form-control" />
+                <label className="form-label" for="form1Example1">
                   Email address
                 </label>
               </div>
 
-              <div class="form-outline mb-4">
+              <div className="form-outline mb-4">
                 <input
                   type="password"
                   id="form1Example2"
-                  class="form-control"
+                  className="form-control"
                 />
-                <label class="form-label" for="form1Example2">
+                <label className="form-label" for="form1Example2">
                   Password
                 </label>
               </div>
@@ -153,7 +153,7 @@ function Login() {
               <button
                 onCLick={loginFunc()}
                 type="submit"
-                class=" signinBtn btn btn-primary btn-block"
+                className=" signinBtn btn btn-primary btn-block"
               >
                 Sign in
               </button>
