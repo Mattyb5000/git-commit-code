@@ -6,6 +6,7 @@ import { List, ListItem } from "../List";
 import { Link } from "react-router-dom";
 import DeleteBtn from "../DeleteBtn";
 
+
 function ProjectForms() {
   // Setting our component's initial state
   const [projectForms, setProjectForms] = useState([])
@@ -53,9 +54,12 @@ function ProjectForms() {
     }
   };
   return (
-    <Container className="fluid">
+    <Container fluid>
       <Row>
-        <Col size="sm-6">
+        <Col size="sm-12">
+       
+        <h3>Enter Your Project Here:</h3>
+      
           <form>
             <Input
               onChange={handleInputChange}
@@ -80,7 +84,7 @@ function ProjectForms() {
             </FormBtn>
           </form>
         </Col>
-        <Col size="sm-6">
+        <Col size="sm-12">
           {projectForms.length ? (
             <List>
               {projectForms.map(projectForm => (
@@ -94,8 +98,9 @@ function ProjectForms() {
                 </ListItem>
               ))}
             </List>
+            
           ) : (
-            <h6>No Project to Display</h6>
+            <h3>No Project to Display</h3>
           )}
         </Col>
       </Row>
