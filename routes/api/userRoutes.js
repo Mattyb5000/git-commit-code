@@ -5,7 +5,9 @@ const userController = require("../../controllers/userController");
 router.route("/").post(userController.create);
 //create a new user for sign-up
 
-router.route("/get-users").get(userController.find);
+router.route("/get-user").get(userController.find);
+
+router.route("/user-by-id").get(userController.findById);
 
 router.route("/new-project").put(userController.update);
 

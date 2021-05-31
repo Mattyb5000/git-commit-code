@@ -37,9 +37,9 @@ class Chart extends Component {
   }
 
   componentDidMount() {
-    API.addUserProjectInProgress().then((res) => {
-      console.log("this", res.data)
-    })
+    // API.addUserProjectInProgress().then((res) => {
+    //   console.log("this", res.data)
+    // })
     API.getUsers().then((res) => {
       console.log("array of user objects", res.data)
       console.log("states' array contents", this.state)

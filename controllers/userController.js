@@ -38,6 +38,16 @@ module.exports = {
 			});
 	},
 
+	
+	findById: async function (id) {
+		alert("you are in api findById user route");
+		db.User.findOne({
+			where: {
+				_id: id
+
+			},
+		});
+	},
 	//find an existing user
 	findOne: async function (req, res) {
 		alert("you are in api findOne user route");

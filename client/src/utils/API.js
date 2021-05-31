@@ -15,12 +15,13 @@ export default {
     return axios.delete("/api/projects/" + id);
   },
 
-  getUsers: function() {
-    return axios.get("/api/users/get-users");
+  getUser: function() {
+    alert('you hit the getUser API call');
+    return axios.get("/api/users/get-user");
   },
 
   addUserProjectInProgress: function(id) {
-    alert('you are in addUserProjectInProgress api route. id is ' + id);
+    alert('you are in addUserProjectInProgress api route');
     return axios.put("/api/users/new-project", {id});
   },
 

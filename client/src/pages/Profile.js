@@ -4,8 +4,9 @@ import Navbar2 from "../components/Navbar2/Navbar2";
 // import ProjectCard from "../components/ProjectCard/index.js";
 import API from "../utils/API";
 import Chart from "../components/Chart";
-// import ProjectForm from "../components/ProjectForm";
+import ProjectForm from "../components/ProjectForm";
 import { Form } from "react-bootstrap";
+import DataTable from "react-data-table-component";
 // import "./Profile.css";
 
 const Profile = () => {
@@ -19,12 +20,13 @@ const Profile = () => {
 	}, []);
 
 	const loadUserProjects = () => {
-		
-
-		API.getUsers()
+		API.getUser()
 			.then((res) => {
-				console.log(res.data);
+				alert(
+					"this is the res.data from the api.getUsers function on profile pg"
+				);
 				setUserProjects(res.data[0].projectsInProgress);
+				console.log(userProjects);
 				// const userProjInProg = res.data[0].projectsInProgress;
 				// setUserProjects(userProjInProg);
 			})
@@ -32,20 +34,51 @@ const Profile = () => {
 	};
 	console.log("Is user projects", userProjects);
 
-  // const handleProjectBut = id => {
-function handleProjectBut(event) {
-	// const rowId = event.target.parentNode.parentNode.id;
-	// console.log(rowId);
+	const data = (userProjects) => {
+		console.log(userProjects);
+		userProjects.map((proj) => [
+			{
+				id: proj.id,
+				projectName: proj.title,
+				link: proj.link,
+				language: proj.language,
+			},
+		]);
+	};
 
-	// console.log("you clicked select button");
-	// const id = e.target.id;
-	// console.log(id);
-	// console.log(id);
-	// var title = this.closest("tr").find(".title").text();
-	// console.log(title);
-console.log("hello");
-};
-	
+	const columns = [
+		{
+			name: "Project Name",
+			selector: "projectName",
+			maxWidth: "250px",
+		},
+		{
+			name: "Link",
+			selector: "link",
+			sortable: false,
+			maxWidth: "200px",
+		},
+		{
+			name: "Language",
+			selector: "language",
+			sortable: true,
+			maxWidth: "150px",
+		},
+	];
+
+	// const handleProjectBut = id => {
+	function handleProjectBut(event) {
+		// const rowId = event.target.parentNode.parentNode.id;
+		// console.log(rowId);
+
+		// console.log("you clicked select button");
+		// const id = e.target.id;
+		// console.log(id);
+		// console.log(id);
+		// var title = this.closest("tr").find(".title").text();
+		// console.log(title);
+		console.log("hello");
+	}
 
 	return (
 		<div className="brick_background">
@@ -56,21 +89,25 @@ console.log("hello");
 			<div className="container-fluid">
 				<div className="row d-flex justify-content-around"></div>
 				<div className="col-12, col-md-12 ">
-					<table className="table-bordered  projectTable w-100 table table-dark">
-						<thead className="table-info table table-dark">
-							<tr>
-								
-								<th scope="col">Project Name</th>
-								<th scope="col">Project Language</th>
-								<th scope="col">Project Link</th>
-								<th scope="col">Submit Completed Project</th>
-							</tr>
-						</thead>
-						<tbody className="projectRow">
+					<DataTable
+						// className="table-bordered  projectTable w-100 table table-dark">
+						title="Projects In Progress"
+						columns={columns}
+						data={userProjects}
+						className="container-fluid"
+						onSelectedRowsChange={handleChange}
+					/>
+					{/* <thead className="table-info table table-dark">
+						<tr>
+							<th scope="col">Project Name</th>
+							<th scope="col">Project Language</th>
+							<th scope="col">Project Link</th>
+							<th scope="col">Submit Completed Project</th>
+						</tr>
+					</thead> */}
+					{/* <tbody className="projectRow">
 						{userProjects.map((proj) => (
-							                
 							<tr key={proj._id}>
-								
 								<td>{proj.title}</td>
 								<td>{proj.language}</td>
 								<td>{proj.link}</td>
@@ -86,48 +123,47 @@ console.log("hello");
 									</button>
 								</td>
 							</tr>
-							))}
-						</tbody>
-					</table>
+						))}
+					</tbody> */}
 				</div>
 
 				<div className="col-12, col-md-12"></div>
 			</div>
-		
-      {/* <ProjectForm /> */}
-      
-			<Chart />
+
+			<ProjectForm />
+
+			{/* <Chart /> */}
 		</div>
 	);
 };
 
 export default Profile;
-  
-  // 	API.getProjects()
-  // 		.then((res) => {
-  // 			console.log(res.data);
-  // 			setProjects(res.data);
-  // 		})
-  // 		.catch((err) => console.log(err));
-  // };
 
-  // console.log("Projects", projects);
+// 	API.getProjects()
+// 		.then((res) => {
+// 			console.log(res.data);
+// 			setProjects(res.data);
+// 		})
+// 		.catch((err) => console.log(err));
+// };
 
-  // {(req.session.user_id)}
+// console.log("Projects", projects);
 
-  // const userProj = user[0].projects;
-  // console.log(userProj);
+// {(req.session.user_id)}
 
-  // const newProjectArray = userProj.map((userProj) =>
-  // 	projectArray.filter((project) => project.project_id === userProj)
-  // );
+// const userProj = user[0].projects;
+// console.log(userProj);
 
-  // console.log(newProjectArray);
-  // setProjects(newProjectArray);
-  // console.log(projects);
+// const newProjectArray = userProj.map((userProj) =>
+// 	projectArray.filter((project) => project.project_id === userProj)
+// );
 
-  //once I'm using the API, the projects need to be sorted in setProjects function within curly braces
-  //.then((res) => setProjects(res.data))
+// console.log(newProjectArray);
+// setProjects(newProjectArray);
+// console.log(projects);
+
+//once I'm using the API, the projects need to be sorted in setProjects function within curly braces
+//.then((res) => setProjects(res.data))
 // };
 //   return (
 //     <div>
@@ -174,11 +210,9 @@ export default Profile;
 
 //         <div className="col-12, col-md-12"></div>
 //       </div>
-     
-  //   </div>
-  // );
 
-
+//   </div>
+// );
 
 // return (
 //   <div>
@@ -244,7 +278,6 @@ export default Profile;
 
 // export default Profile;
 
-
 // {
 /* <h5 className="pageTitle text-center pt-5">My Profile</h5>
 			<div className="container-fluid">
@@ -256,27 +289,27 @@ export default Profile;
 </div> */
 // }
 // 	API.getProjects()
-	// 		.then((res) => {
-	// 			console.log(res.data);
-	// 			setProjects(res.data);
-	// 		})
-	// 		.catch((err) => console.log(err));
-	// };
+// 		.then((res) => {
+// 			console.log(res.data);
+// 			setProjects(res.data);
+// 		})
+// 		.catch((err) => console.log(err));
+// };
 
-	// console.log("Projects", projects);
+// console.log("Projects", projects);
 
-	// {(req.session.user_id)}
+// {(req.session.user_id)}
 
-	// const userProj = user[0].projects;
-	// console.log(userProj);
+// const userProj = user[0].projects;
+// console.log(userProj);
 
-	// const newProjectArray = userProj.map((userProj) =>
-	// 	projectArray.filter((project) => project.project_id === userProj)
-	// );
+// const newProjectArray = userProj.map((userProj) =>
+// 	projectArray.filter((project) => project.project_id === userProj)
+// );
 
-	// console.log(newProjectArray);
-	// setProjects(newProjectArray);
-	// console.log(projects);
+// console.log(newProjectArray);
+// setProjects(newProjectArray);
+// console.log(projects);
 
-	//once I'm using the API, the projects need to be sorted in setProjects function within curly braces
-	//.then((res) => setProjects(res.data))
+//once I'm using the API, the projects need to be sorted in setProjects function within curly braces
+//.then((res) => setProjects(res.data))
