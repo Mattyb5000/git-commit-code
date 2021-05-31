@@ -63,6 +63,7 @@ router.post("/", async (req, res) => {
 // //log out an existing user
 // router.route("/logout").post(userController.destroy);
 
+
 module.exports = router;
 
 // .post("/login", ({body}, res) => {

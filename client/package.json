@@ -10,11 +10,13 @@
     "react": "^16.6.3",
     "react-bootstrap": "^1.6.0",
     "react-chartjs-2": "^3.0.3",
+    "react-data-table-component": "^6.11.7",
     "react-dom": "^16.6.3",
     "react-hook-form": "^7.7.0",
     "react-hook-form-auto": "^1.2.11",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^2.1.1"
+    "react-scripts": "^2.1.1",
+    "styled-components": "^5.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

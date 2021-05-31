@@ -15,13 +15,18 @@ export default {
     return axios.delete("/api/projects/" + id);
   },
 
-  getUsers: function() {
-    return axios.get("/api/users/get-users");
+  getUser: function() {
+    return axios.get("/api/users/get-user");
   },
 
   addUserProjectInProgress: function(id) {
-    alert('you are in addUserProjectInProgress api route. id is ' + id);
+    alert('you are in addUserProjectInProgress api route');
     return axios.put("/api/users/new-project", {id});
+  },
+
+  addUserCompletedProject: function(id) {
+    alert('you are in addUserProjectInProgress api route');
+    return axios.put("/api/users/completed-project", id);
   },
 
   getProjectForms: function() {
@@ -32,6 +37,7 @@ export default {
     return axios.get("/api/projectForms/" + id);
   },
   // Deletes the ProjectForm with the given id
+  
   deleteProjectForm: function(id) {
     return axios.delete("/api/projectForms/" + id);
   },
