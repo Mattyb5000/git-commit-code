@@ -10,7 +10,7 @@ router.route("/get-users").get(userController.find);
 router.route("/new-project").put(userController.update);
 
 //find an existing user to log in
-router.route("/login").post(userController.findOne);
+router.route("/login").get(userController.findOne);
 
 //log out an existing user
 router.route("/logout").post(userController.destroy);
