@@ -33,6 +33,8 @@ export default {
     return axios.put("/api/users/completed-project", id);
   },
 
+  //**** Add /remove (project in progress) */
+
   getProjectForms: function() {
     return axios.get("/api/projectForms");
   },

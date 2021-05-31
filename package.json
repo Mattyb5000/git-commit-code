@@ -27,6 +27,8 @@
 		"express-session": "^1.17.2",
 		"if-env": "^1.0.4",
 		"mongodb": "^3.6.8",
-		"mongoose": "^5.12.11"
+		"mongoose": "^5.12.11",
+		"react-data-table-component": "^6.11.7",
+		"styled-components": "^5.3.0"
 	}
 }
