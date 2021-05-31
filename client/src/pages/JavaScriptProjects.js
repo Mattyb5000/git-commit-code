@@ -51,7 +51,6 @@ const JavaScriptProjects = () => {
 							
 							handleProjectSelect={handleProjectSelect} />
 						))}
-					
 				</div>
 			</div>
 			<Modal show={show} onHide={handleClose}>
