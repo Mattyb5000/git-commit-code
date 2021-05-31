@@ -9,11 +9,7 @@ import DeleteBtn from "../DeleteBtn";
 //when project is clicked, it's removed from the user's projects in progress
 
 function ProjectForms(props) {
-	console.log(props.clickedProj);
 	var proj = props.clickedProj;
-	console.log(proj);
-	console.log(proj._id);
-	console.log(proj.title);
 	const projId = proj._id;
 	console.log(projId);
 	const projTitle = proj.title;
@@ -55,16 +51,21 @@ function ProjectForms(props) {
 	// Then reload ProjectForms from the database
 	function handleFormSubmit(event) {
 		event.preventDefault();
-		alert("button has been clicked");
-		alert("projectName: " + formObject.projectname);
 		if (formObject.username) {
-      console.log(projTitle)
+			console.log(projTitle);
 			API.saveProjectForm({
-        id: projId,
+				_id: projId,
 				projectname: projTitle,
 				username: formObject.username,
 				url: formObject.url,
+			});
+			// const id = req.session.user_id;
+			console.log("projId is" + projId);
+			API.addUserCompletedProject({
+				
+				id: projId,
 			})
+
 				.then((res) => loadProjectForms())
 				.catch((err) => console.log(err));
 		}

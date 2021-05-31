@@ -11,6 +11,8 @@ router.route("/user-by-id").get(userController.findById);
 
 router.route("/new-project").put(userController.update);
 
+router.route("/completed-project").put(userController.updateCompletedProject);
+
 //find an existing user to log in
 router.route("/login").get(userController.findOne);
 

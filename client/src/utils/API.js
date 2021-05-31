@@ -24,6 +24,11 @@ export default {
     return axios.put("/api/users/new-project", {id});
   },
 
+  addUserCompletedProject: function(id) {
+    alert('you are in addUserProjectInProgress api route');
+    return axios.put("/api/users/completed-project", id);
+  },
+
   getProjectForms: function() {
     return axios.get("/api/projectForms");
   },

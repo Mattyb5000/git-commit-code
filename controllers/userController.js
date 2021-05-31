@@ -5,7 +5,6 @@ const { find } = require("../models/project");
 //create a new user
 module.exports = {
 	create: function (req, res) {
-		alert("you are in api create user route");
 		db.User.create(req.body)
 
 			.then((dbUser) => res.json(dbUser))
@@ -14,17 +13,16 @@ module.exports = {
 	},
 
 	find: async function (req, res) {
-		db.User.find({ _id: "60b41a85b17a1c3bd0f635c8" })
+		db.User.find({ _id: "60b4fb51c17d9458040aba7b" })
 			.populate("projectsInProgress")
 			.then((dbUser) => res.json(dbUser))
 			.catch((err) => res.status(422).json(err));
 	},
 
 	update: async function (req, res) {
-		alert('you are in the update userController function' + req.body.id);
 		db.User.findOneAndUpdate(
 			//
-			{ _id: "60b41a85b17a1c3bd0f635c8" },
+			{ _id: "60b4fb51c17d9458040aba7b" },
 			{ $push: { projectsInProgress: req.body.id } },
 			{ new: true }
 		)
@@ -38,6 +36,27 @@ module.exports = {
 			});
 	},
 
+	updateCompletedProject:  function (req, res) {
+		debugger;
+		console.log(req.body.id);
+		db.User.findOneAndUpdate(
+			
+			{ _id: "60b4fb51c17d9458040aba7b" },
+			{ $push: { projectsComplete: req.body.id } },
+			{ new: true }
+			)
+			.then((dbProject) => {
+				console.log(dbProject);
+				res.json(dbProject);
+			})
+		
+			.catch((err) => {
+				console.log(err);
+				res.status(422).json(err);
+			});
+	
+	},
+
 	
 	findById: async function (id) {
 		alert("you are in api findById user route");
@@ -48,6 +67,7 @@ module.exports = {
 			},
 		});
 	},
+
 	//find an existing user
 	findOne: async function (req, res) {
 		alert("you are in api findOne user route");

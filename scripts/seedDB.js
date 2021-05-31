@@ -129,7 +129,7 @@ const userSeed = [
 		password: "123123",
 		email: "bigBird@gmail.com",
 		projectsInProgress: [],
-		projectsCompleted: [],
+		projectsComplete: [],
 	},
 	{
 		firstName: "Myrtle",
@@ -137,7 +137,7 @@ const userSeed = [
 		password: "123123",
 		email: "myrtle@hotmail.com",
 		projectsInProgress: [],
-		projectsCompleted: [],
+		projectsComplete: [],
 	},
 	{
 		firstName: "Bob",
@@ -145,7 +145,7 @@ const userSeed = [
 		password: "123123",
 		email: "everyonelovesme@gmail.com",
 		projectsInProgress: [],
-		projectsCompleted: [],
+		projectsComplete: [],
 	},
 ];
 
@@ -155,21 +155,21 @@ const projectFormSeed = [
 		username: "Bird",
 		url: "github/bigbird.com",
 		projectsInProgress: [],
-		projectsCompleted: [],
+		projectsComplete: [],
 	},
 	{
 		projectname: "Rat in a Maze",
 		username: "Bird",
 		url: "github/bigbird.com",
 		projectsInProgress: [],
-		projectsCompleted: [],
+		projectsComplete: [],
 	},
 	{
 		projectname: "JavaScript Quiz",
 		username: "Bird",
 		url: "github/bigbird.com",
 		projectsInProgress: [],
-		projectsCompleted: [],
+		projectsComplete: [],
 	},
 ];
 
@@ -180,11 +180,11 @@ const seedIt = () => {
 			console.log(data.result.n + " Hell yeah! We did it! Liz rocks!");
 			db.Project.find().then((data) => {
 				userSeed[0].projectsInProgress.push(data[2]._id, data[4]._id);
-				userSeed[0].projectsCompleted.push(data[8]._id, data[14]._id);
+				userSeed[0].projectsComplete.push(data[8]._id, data[14]._id);
 				userSeed[1].projectsInProgress.push(data[3]._id);
-				userSeed[1].projectsCompleted.push(data[1]._id);
+				userSeed[1].projectsComplete.push(data[1]._id);
 				userSeed[2].projectsInProgress.push(data[5]._id, data[6]._id);
-				userSeed[2].projectsCompleted.push(data[2]._id, data[3]._id);
+				userSeed[2].projectsComplete.push(data[2]._id, data[3]._id);
 
 			db.User.deleteMany({})
 				.then(() => db.User.collection.insertMany(userSeed))
