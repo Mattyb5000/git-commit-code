@@ -32,16 +32,16 @@ const JavaScriptProjects = () => {
 	console.log("These are the js projects on the js project page", projects);
 
 	const handleProjectSelect = id => {
-		console.log(id);
 
 		API.addUserProjectInProgress(id).then((res) => {
-			console.log(res.data);
+			// JSON.parse(res.config.data).id
+			// alert(res.config.data);
 			setShow(true);
 		});
 	};
 
 	return (
-		<div>
+		<div className="brick_background">
 			<Navbar2 />
 			<h5 className="pageTitle text-center pt-5">JavaScript Projects</h5>
 			<div className="container-fluid">

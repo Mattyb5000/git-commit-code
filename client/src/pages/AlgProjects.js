@@ -32,8 +32,7 @@ const AlgProjects = () => {
 	console.log("Is this projects", projects);
 
 	const handleProjectSelect = id => {
-		console.log(id);
-
+		
 		API.addUserProjectInProgress(id).then((res) => {
 			console.log(res.data);
 			setShow(true);
@@ -41,7 +40,7 @@ const AlgProjects = () => {
 	};
 
 	return (
-		<div>
+		<div className="brick_background">
 			<Navbar2 />
 			<h5 className="pageTitle text-center pt-5">Algorithms Practice</h5>
 			<div className="container-fluid">
