@@ -32,6 +32,7 @@ const ReactProjects = () => {
 		console.log("Is this projects", projects);	
 
 		const handleProjectSelect = id => {
+			console.log("in handleProjectSelect of reactProjects");
 			console.log(id);
 	
 			API.addUserProjectInProgress(id).then((res) => {
@@ -41,7 +42,7 @@ const ReactProjects = () => {
 		};
 	
 	return (
-		<div>
+		<div className="brick_background">
 			<Navbar2 />
 			<h5 className="pageTitle text-center pt-5">React Projects</h5>
 			<div className="container-fluid">

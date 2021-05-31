@@ -7,7 +7,7 @@ function About() {
   return (
     <div className="brick_background">
     <Navbar1/>
-    <div className="container ">
+    <div className="container text-center">
       <div className="about animate__animated animate__fadeIn  p-3 mb-2 bg-transparent text-dark">
         <h2>Why we developed Git.Commit</h2>
         <div>

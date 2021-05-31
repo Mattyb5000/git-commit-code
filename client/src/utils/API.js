@@ -20,6 +20,7 @@ export default {
   },
 
   addUserProjectInProgress: function(id) {
+    alert('you are in addUserProjectInProgress api route. id is ' + id);
     return axios.put("/api/users/new-project", {id});
   },
 

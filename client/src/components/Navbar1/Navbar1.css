@@ -16,7 +16,7 @@ p:link {
 }
 
 .navbar1 {
-  background-color: rgb(245, 245, 245, 0.5);
+  background-color: rgb(245, 245, 245, 0.85);
   display: flex;
   justify-content: space-between;
   height: 140px;
