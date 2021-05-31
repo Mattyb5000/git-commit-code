@@ -11,7 +11,7 @@ const AlgProjects = () => {
 	const [show, setShow] = useState(false);
 
 	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
+	// const handleShow = () => setShow(true);
 	// loads all projects and sets them to projects
 	useEffect(() => {
 		loadProjects();
@@ -54,9 +54,9 @@ const AlgProjects = () => {
 			</div>
 			<Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>You have added this project to your Projects in Progress</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>Please visit your profile page to see your Projects in Progress</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

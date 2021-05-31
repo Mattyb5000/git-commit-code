@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Bar } from "react-chartjs-2";
 import API from "../utils/API";
-import FakeUserAPI from "../utils/FakeUserAPI";
+// import FakeUserAPI from "../utils/FakeUserAPI";
 
 const data = {
     labels: ['JavaScript', 'Algorithms', 'React'],
@@ -37,14 +37,14 @@ class Chart extends Component {
   }
 
   componentDidMount() {
-    API.addUserProjectInProgress().then((res) => {
-      console.log("this", res.data)
-    })
-    API.getUsers().then((res) => {
+    // API.addUserProjectInProgress().then((res) => {
+    //   console.log("this", res.data)
+    // })
+    API.getUser().then((res) => {
       console.log("array of user objects", res.data)
       console.log("states' array contents", this.state)
       // const projectsInProgress = res.data;
-      const totalCompleted = res.data[0].projectsCompleted.length;
+      const totalCompleted = res.data[0].projectsComplete.length;
       const totalInProg = res.data[0].projectsInProgress.length;
       // const totalInProgJS = res.data[0].projectsInProgress.length;
 
