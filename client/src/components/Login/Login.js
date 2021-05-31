@@ -49,12 +49,14 @@ function Login() {
 
   const signupFunc = (event) => {
     event.preventDefault();
-    Axios.post("./api/users/", values)
-    .then((response) => {
-      console.log(response);
-    })
-    .catch(console.log("something went wrong signing up"));
-  }
+    Axios.post("/api/users/", values)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        throw error;
+      });
+  };
 
   return (
     <div className="brick_background">
@@ -72,9 +74,7 @@ function Login() {
                   value={values.email}
                   className="form-control"
                 />
-                <label className="form-label center-text">
-                  Email address
-                </label>
+                <label className="form-label center-text">Email address</label>
               </div>
               <div className="form-outline mb-4">
                 <input
@@ -84,9 +84,7 @@ function Login() {
                   className="form-control"
                   id="firstName-signup"
                 />
-                <label className="form-label">
-                  First Name
-                </label>
+                <label className="form-label">First Name</label>
               </div>
               <div className="form-outline mb-4">
                 <input
@@ -96,9 +94,7 @@ function Login() {
                   className="form-control"
                   id="lastName-signup"
                 />
-                <label className="form-label">
-                  Last Name
-                </label>
+                <label className="form-label">Last Name</label>
               </div>
 
               <div className="form-outline mb-4">
@@ -109,9 +105,7 @@ function Login() {
                   className="form-control"
                   id="password-signup"
                 />
-                <label className="form-label">
-                  Password
-                </label>
+                <label className="form-label">Password</label>
               </div>
 
               <div className="row mb-4">
@@ -122,10 +116,7 @@ function Login() {
                       type="checkbox"
                       value=""
                     />
-                    <label className="form-check-label">
-                      {" "}
-                      Remember me{" "}
-                    </label>
+                    <label className="form-check-label"> Remember me </label>
                   </div>
                 </div>
 
@@ -149,16 +140,12 @@ function Login() {
             <form onSubmit={loginFunc}>
               <div className="form-outline mb-4">
                 <input type="email" className="form-control" />
-                <label className="form-label">
-                  Email address
-                </label>
+                <label className="form-label">Email address</label>
               </div>
 
               <div className="form-outline mb-4">
                 <input type="password" className="form-control" />
-                <label className="form-label">
-                  Password
-                </label>
+                <label className="form-label">Password</label>
               </div>
 
               <div className="row mb-4">
@@ -169,10 +156,7 @@ function Login() {
                       type="checkbox"
                       value=""
                     />
-                    <label className="form-check-label">
-                      {" "}
-                      Remember me{" "}
-                    </label>
+                    <label className="form-check-label"> Remember me </label>
                   </div>
                 </div>
 

@@ -22,7 +22,7 @@ const { User } = require("../models/user")
 		console.log("you're in api user / to create a post");
 	  
 		try {
-		  const userData = await User.create({
+		  const userData = await user.create({
 			lastName: req.body.lastName,
 			firstName: req.body.firstName,
 			email: req.body.email,
