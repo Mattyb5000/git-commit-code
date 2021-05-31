@@ -11,7 +11,7 @@ const AlgProjects = () => {
 	const [show, setShow] = useState(false);
 
 	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
+	// const handleShow = () => setShow(true);
 	// loads all projects and sets them to projects
 	useEffect(() => {
 		loadProjects();

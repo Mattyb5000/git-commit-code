@@ -5,7 +5,7 @@ import Navbar2 from "../components/Navbar2/Navbar2";
 import API from "../utils/API";
 import Chart from "../components/Chart";
 import ProjectForm from "../components/ProjectForm";
-import { Form } from "react-bootstrap";
+// import { Form } from "react-bootstrap";
 import DataTable from "react-data-table-component";
 // import "./Profile.css";
 
@@ -15,41 +15,31 @@ const Profile = () => {
 
 	// loads all projects and sets them to projects
 	useEffect(() => {
-		alert("you are in useEffect on profile.js");
 		loadUserProjects();
 	}, []);
 
 	const loadUserProjects = () => {
 		API.getUser()
 			.then((res) => {
-				alert(
-					"this is the res.data from the api.getUsers function on profile pg"
-				);
-				setUserProjects(res.data[0].projectsInProgress);
-				console.log(userProjects);
-				// const userProjInProg = res.data[0].projectsInProgress;
-				// setUserProjects(userProjInProg);
+				var userProjectsArray = res.data[0].projectsInProgress;
+				// setUserProjects(res.data[0]);
+				// console.log(userProjectsArray);
+				setUserProjects(userProjectsArray);
+				// console.log(userProjects);
 			})
 			.catch((err) => console.log(err));
 	};
-	console.log("Is user projects", userProjects);
 
-	const data = (userProjects) => {
-		console.log(userProjects);
-		userProjects.map((proj) => [
-			{
-				id: proj.id,
-				projectName: proj.title,
-				link: proj.link,
-				language: proj.language,
-			},
-		]);
-	};
+	var dataArray = userProjects;
+
+	 console.log(dataArray);
+
+	 const data = dataArray;
 
 	const columns = [
 		{
-			name: "Project Name",
-			selector: "projectName",
+			title: "Project Name",
+			selector: "title",
 			maxWidth: "250px",
 		},
 		{
@@ -66,17 +56,22 @@ const Profile = () => {
 		},
 	];
 
-	// const handleProjectBut = id => {
-	function handleProjectBut(event) {
-		// const rowId = event.target.parentNode.parentNode.id;
-		// console.log(rowId);
 
-		// console.log("you clicked select button");
-		// const id = e.target.id;
-		// console.log(id);
-		// console.log(id);
-		// var title = this.closest("tr").find(".title").text();
-		// console.log(title);
+	// const handleProjectBut = id => {
+	// function handleProjectBut(event) {
+	// const rowId = event.target.parentNode.parentNode.id;
+	// console.log(rowId);
+
+	// console.log("you clicked select button");
+	// const id = e.target.id;
+	// console.log(id);
+	// console.log(id);
+	// var title = this.closest("tr").find(".title").text();
+	// console.log(title);
+	// 	console.log("hello");
+	// }
+
+	const handleChange = () => {
 		console.log("hello");
 	}
 
@@ -93,10 +88,11 @@ const Profile = () => {
 						// className="table-bordered  projectTable w-100 table table-dark">
 						title="Projects In Progress"
 						columns={columns}
-						data={userProjects}
+						data={data}
 						className="container-fluid"
 						onSelectedRowsChange={handleChange}
 					/>
+					
 					{/* <thead className="table-info table table-dark">
 						<tr>
 							<th scope="col">Project Name</th>
