@@ -15,6 +15,10 @@ export default {
     return axios.delete("/api/projects/" + id);
   },
 
+  deleteProjectInProgress: function(id) {
+    return axios.delete("/api/users/" + id);
+  },
+
   getUser: function() {
     return axios.get("/api/users/get-user");
   },
@@ -28,6 +32,8 @@ export default {
     alert('you are in addUserProjectInProgress api route');
     return axios.put("/api/users/completed-project", id);
   },
+
+  //**** Add /remove (project in progress) */
 
   getProjectForms: function() {
     return axios.get("/api/projectForms");

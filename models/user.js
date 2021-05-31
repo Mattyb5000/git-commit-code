@@ -68,16 +68,16 @@ const User = mongoose.model("User", UserSchema);
 // ! bcrypt password function here
 
 
-function CheckPassword(inputtxt) {
-  var passw = user.password;
-  if (inputtxt.value.match(passw)) {
-    alert("Correct Password");
-    return true;
-  } else {
-    alert("Wrong Password...!");
-    return false;
-  }
-}
+// function CheckPassword(inputtxt) {
+//   var passw = user.password;
+//   if (inputtxt.value.match(passw)) {
+//     alert("Correct Password");
+//     return true;
+//   } else {
+//     alert("Wrong Password...!");
+//     return false;
+//   }
+// }
 
 module.exports = User;
 

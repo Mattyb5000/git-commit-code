@@ -1,11 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Navbar2 from "../components/Navbar2/Navbar2";
-// import ProjectCard from "../components/ProjectCard/index.js";
 import API from "../utils/API";
 import Chart from "../components/Chart";
 import ProjectForm from "../components/ProjectForm";
-// import { Form } from "react-bootstrap";
 import DataTable from "react-data-table-component";
 import "./Profile.css";
 
@@ -111,21 +109,6 @@ const Profile = () => {
 
 export default Profile;
 
-// const handleProjectBut = id => {
-// function handleProjectBut(event) {
-// const rowId = event.target.parentNode.parentNode.id;
-// console.log(rowId);
-
-// console.log("you clicked select button");
-// const id = e.target.id;
-// console.log(id);
-// console.log(id);
-// var title = this.closest("tr").find(".title").text();
-// console.log(title);
-// 	console.log("hello");
-// }
-
-{
 	/* <thead className="table-info table table-dark">
 						<tr>
 							<th scope="col">Project Name</th>
@@ -134,8 +117,7 @@ export default Profile;
 							<th scope="col">Submit Completed Project</th>
 						</tr>
 					</thead> */
-}
-{
+
 	/* <tbody className="projectRow">
 						{userProjects.map((proj) => (
 							<tr key={proj._id}>
@@ -156,7 +138,7 @@ export default Profile;
 							</tr>
 						))}
 					</tbody> */
-}
+
 // 	API.getProjects()
 // 		.then((res) => {
 // 			console.log(res.data);

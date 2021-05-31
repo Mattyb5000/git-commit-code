@@ -4,7 +4,7 @@ import API from "../utils/API";
 // import FakeUserAPI from "../utils/FakeUserAPI";
 
 const data = {
-    // labels: ['JavaScript', 'Algorithms', 'React'],
+    labels: ['JavaScript', 'Algorithms', 'React'],
     datasets: [
       {
         label: 'In-progress',
