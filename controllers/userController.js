@@ -5,7 +5,7 @@ const { find } = require("../models/project");
 //create a new user
 module.exports = {
 	create: function (req, res) {
-		console.log("you are in api create user route");
+		alert("you are in api create user route");
 		db.User.create(req.body)
 
 			.then((dbUser) => res.json(dbUser))
@@ -21,7 +21,7 @@ module.exports = {
 	},
 
 	update: async function (req, res) {
-		console.log(req.body.id);
+		alert('you are in the update userController function' + req.body.id);
 		db.User.findOneAndUpdate(
 			//
 			{ _id: "60b41a85b17a1c3bd0f635c8" },
@@ -40,7 +40,7 @@ module.exports = {
 
 	//find an existing user
 	findOne: async function (req, res) {
-		console.log("you are in api findOne user route");
+		alert("you are in api findOne user route");
 		db.User.findOne({
 			where: {
 				email: req.body.email,

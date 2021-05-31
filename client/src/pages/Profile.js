@@ -69,7 +69,7 @@ console.log("hello");
 						<tbody className="projectRow">
 						{userProjects.map((proj) => (
 							                
-							<tr>
+							<tr key={proj._id}>
 								
 								<td>{proj.title}</td>
 								<td>{proj.language}</td>
