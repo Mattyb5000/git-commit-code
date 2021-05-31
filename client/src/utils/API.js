@@ -16,7 +16,6 @@ export default {
   },
 
   getUser: function() {
-    alert('you hit the getUser API call');
     return axios.get("/api/users/get-user");
   },
 
