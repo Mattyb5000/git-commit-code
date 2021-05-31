@@ -5,37 +5,11 @@ const { find } = require("../models/project");
 
 
 module.exports = {
-
-create: async function (req, res) {
-	console.log(req.body);
-  console.log("you're in api user / to create a post");
-
-  try {
-    const userData = await db.User.create({
-      email: req.body.email,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      password: req.body.password,
-    });
-
-    req.session.save(() => {
-     
-      req.session.user_id = userData.user_id;
-      req.session.loggedIn = true;
-
-      res.status(200).json(userData);
-      console.log("You made it through the sign-in user route");
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(400).json(err);
-  }
-
-},
-
 	//finds a user to populate projects on profile page
 	find: async function (req, res) {
-		db.User.find({ _id: "60b52f3dcb139bea1456c753" })
+
+		await db.User.find({ _id: req.session.user_id })
+
 			.populate("projectsInProgress")
 			.then((dbUser) => res.json(dbUser))
 			.catch((err) => res.status(422).json(err));
@@ -44,8 +18,9 @@ create: async function (req, res) {
 	//finds a user and adds a project in progress from the project pages
 	update: async function (req, res) {
 		db.User.findOneAndUpdate(
-			//
-			{ _id: "60b52f3dcb139bea1456c753" },
+
+			{ _id: req.session.user_id },
+
 			{ $push: { projectsInProgress: req.body.id } },
 			{ new: true }
 		)
@@ -64,7 +39,8 @@ create: async function (req, res) {
 		console.log(req.body.id);
 		db.User.findOneAndUpdate(
 			
-			{ _id: "60b52f3dcb139bea1456c753" },
+		{ _id: req.session.user_id },
+
 			{ $push: { projectsComplete: req.body.id } },
 			{ new: true }
 			)
@@ -89,38 +65,38 @@ create: async function (req, res) {
 	},
 
 	//find an existing user
-	findOne: async function (req, res) {
-		alert("you are in api findOne user route");
-		db.User.findOne({
-			where: {
-				email: req.body.email,
-			},
-		});
+	// findOne: async function (req, res) {
+	// 	alert("you are in api findOne user route");
+	// 	db.User.findOne({
+	// 		where: {
+	// 			email: req.body.email,
+	// 		},
+	// 	});
 
-		const validPassword = await userData.checkPassword(req.body.password);
+	// 	const validPassword = await userData.checkPassword(req.body.password);
 
-		if (!validPassword) {
-			res
-				.status(400)
-				.json({ message: "Incorrect email or password. Please try again!" });
-			return;
-		}
+	// 	if (!validPassword) {
+	// 		res
+	// 			.status(400)
+	// 			.json({ message: "Incorrect email or password. Please try again!" });
+	// 		return;
+	// 	}
 
 		//does this go here?
-		req.session
-			.save(() => {
-				console.log("Im in req.session.save");
-				req.session.user_id = userData.user_id;
-				req.session.loggedIn = true;
-				console.log(userData.user_id);
-				console.log(req.session.user_id);
-				res.json({ user: userData, message: "You are now logged in!" });
-			})
-			.catch((err) => {
-				console.log(err);
-				res.status(422).json(err);
-			});
-	},
+	// 	req.session
+	// 		.save(() => {
+	// 			console.log("Im in req.session.save");
+	// 			req.session.user_id = userData.user_id;
+	// 			req.session.loggedIn = true;
+	// 			console.log(userData.user_id);
+	// 			console.log(req.session.user_id);
+	// 			res.json({ user: userData, message: "You are now logged in!" });
+	// 		})
+	// 		.catch((err) => {
+	// 			console.log(err);
+	// 			res.status(422).json(err);
+	// 		});
+	// },
 
 	destroy: function (req, res) {
 		console.log("you are in the api logout user route");
