@@ -12,6 +12,7 @@ module.exports = {
 			.catch((err) => res.status(422).json(err));
 	},
 
+	//loads users projects onto the profile page
 	find: async function (req, res) {
 		db.User.find({ _id: "60b4fb51c17d9458040aba7b" })
 			.populate("projectsInProgress")
@@ -19,6 +20,7 @@ module.exports = {
 			.catch((err) => res.status(422).json(err));
 	},
 
+	//adds a project in progress to user
 	update: async function (req, res) {
 		db.User.findOneAndUpdate(
 			//
@@ -37,8 +39,6 @@ module.exports = {
 	},
 
 	updateCompletedProject:  function (req, res) {
-		debugger;
-		console.log(req.body.id);
 		db.User.findOneAndUpdate(
 			
 			{ _id: "60b4fb51c17d9458040aba7b" },
@@ -100,6 +100,25 @@ module.exports = {
 				res.status(422).json(err);
 			});
 	},
+
+	destroyProjectInProgress: function(req, res) {
+		db.User.findById(
+		{ _id: "60b4fb51c17d9458040aba7b" },
+		{ new: true }
+		)
+		.then((dbProject) => {
+			console.log(dbProject);
+			res.json(dbProject);
+		})
+	
+		.catch((err) => {
+			console.log(err);
+			res.status(422).json(err);
+		});
+
+},
+
+	
 
 	destroy: function (req, res) {
 		console.log("you are in the api logout user route");

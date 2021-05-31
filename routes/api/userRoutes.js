@@ -19,6 +19,8 @@ router.route("/login").get(userController.findOne);
 //log out an existing user
 router.route("/logout").post(userController.destroy);
 
+router.route("/remove-project-in-progress").post(userController.destroyProjectInProgress);
+
 
 module.exports = router;
 

@@ -15,6 +15,10 @@ export default {
     return axios.delete("/api/projects/" + id);
   },
 
+  deleteProjectInProgress: function(id) {
+    return axios.delete("/api/users/" + id);
+  },
+
   getUser: function() {
     return axios.get("/api/users/get-user");
   },
