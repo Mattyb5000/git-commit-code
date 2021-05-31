@@ -14,12 +14,12 @@ const Profile = () => {
 
 	// loads all projects and sets them to projects
 	useEffect(() => {
-		console.log("you are in useEffect on profile.js");
+		alert("you are in useEffect on profile.js");
 		loadUserProjects();
 	}, []);
 
 	const loadUserProjects = () => {
-		console.log("you are in the load projects function on profile page");
+		
 
 		API.getUsers()
 			.then((res) => {
