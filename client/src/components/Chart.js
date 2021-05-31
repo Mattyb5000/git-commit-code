@@ -4,7 +4,7 @@ import API from "../utils/API";
 // import FakeUserAPI from "../utils/FakeUserAPI";
 
 const data = {
-    labels: ['JavaScript', 'Algorithms', 'React'],
+    // labels: ['JavaScript', 'Algorithms', 'React'],
     datasets: [
       {
         label: 'In-progress',
@@ -59,7 +59,7 @@ class Chart extends Component {
   }
   render() {
     return (
-      <div className='container'>
+      <div className='container about-background'>
         	<h5 className="pageTitle text-center pt-5">My progress</h5>
           <Bar data={data} />
       </div>

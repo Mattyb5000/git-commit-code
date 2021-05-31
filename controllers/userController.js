@@ -13,7 +13,7 @@ module.exports = {
 	},
 
 	find: async function (req, res) {
-		db.User.find({ _id: "60b4fb51c17d9458040aba7b" })
+		db.User.find({ _id: "60b52f3dcb139bea1456c753" })
 			.populate("projectsInProgress")
 			.then((dbUser) => res.json(dbUser))
 			.catch((err) => res.status(422).json(err));
@@ -22,7 +22,7 @@ module.exports = {
 	update: async function (req, res) {
 		db.User.findOneAndUpdate(
 			//
-			{ _id: "60b4fb51c17d9458040aba7b" },
+			{ _id: "60b52f3dcb139bea1456c753" },
 			{ $push: { projectsInProgress: req.body.id } },
 			{ new: true }
 		)
@@ -41,7 +41,7 @@ module.exports = {
 		console.log(req.body.id);
 		db.User.findOneAndUpdate(
 			
-			{ _id: "60b4fb51c17d9458040aba7b" },
+			{ _id: "60b52f3dcb139bea1456c753" },
 			{ $push: { projectsComplete: req.body.id } },
 			{ new: true }
 			)

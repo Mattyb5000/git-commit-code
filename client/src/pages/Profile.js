@@ -7,7 +7,7 @@ import Chart from "../components/Chart";
 import ProjectForm from "../components/ProjectForm";
 // import { Form } from "react-bootstrap";
 import DataTable from "react-data-table-component";
-// import "./Profile.css";
+import "./Profile.css";
 
 const Profile = () => {
 	const [userProjects, setUserProjects] = useState([]);
@@ -84,12 +84,12 @@ const Profile = () => {
 			<div className="container-fluid pageTitle">
 				<h5 className="pageTitle text-center pt-5">My Profile</h5>
 			</div>
-			<div className="container-fluid">
+			<div className="container">
 				<div className="row d-flex justify-content-around"></div>
-				<div className="col-12, col-md-12 ">
+				<div className="col-9 ">
 					<DataTable
 						// className="table-bordered  projectTable w-100 table table-dark">
-						className="table-bordered projectTable w-100 table table-dark"
+						className="rdt_Table"
 						title="Projects In Progress"
 						columns={columns}
 						data={data}
@@ -104,7 +104,7 @@ const Profile = () => {
 
 			<ProjectForm clickedProj={clickedProjects} />
 
-			{/* <Chart /> */}
+			<Chart />
 		</div>
 	);
 };
