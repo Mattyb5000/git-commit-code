@@ -6,8 +6,23 @@ import { List, ListItem } from "../List";
 import { Link } from "react-router-dom";
 import DeleteBtn from "../DeleteBtn";
 
+//when project is clicked, project name goes into first input field
+//when project is clicked, it's removed from the user's projects in progress
 
-function ProjectForms() {
+//when submit button is clicked, project is added to user's completed project array
+
+//when submit button is clicked, form clears
+
+function ProjectForms(props) {
+  console.log(props.clickedProj);
+  var proj = props.clickedProj;
+  console.log(proj);
+  console.log(proj._id);
+  console.log(proj.title);
+  const projId = proj._id;
+  console.log(projId);
+  const projTitle = proj.title;
+  console.log(projTitle);
   // Setting our component's initial state
   const [projectForms, setProjectForms] = useState([])
   const [formObject, setFormObject] = useState({})
@@ -31,7 +46,7 @@ function ProjectForms() {
     API.deleteProjectForm(id)
       .then(res => loadProjectForms())
       .catch(err => console.log(err));
-  }
+  };
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
@@ -43,6 +58,7 @@ function ProjectForms() {
   // Then reload ProjectForms from the database
   function handleFormSubmit(event) {
     event.preventDefault();
+    alert('button has been clicked');
     if (formObject.projectname && formObject.username) {
       API.saveProjectForm({
         projectname: formObject.projectname,
@@ -60,11 +76,12 @@ function ProjectForms() {
        
         <h3>Enter Your Project Here:</h3>
       
-          <form>
+          <form key={projId}>
             <Input
-              onChange={handleInputChange}
+              value={projTitle}
               name="projectname"
               placeholder="Project Name (required)"
+              readOnly
             />
             <Input
               onChange={handleInputChange}
@@ -77,7 +94,8 @@ function ProjectForms() {
               placeholder="Deployed URL"
             />
             <FormBtn 
-              disabled={!(formObject.projectname && formObject.username)}
+            disabled={!(formObject.username)}
+              // disabled={!(formObject.projectname && formObject.username)}
               onClick={handleFormSubmit}
             >
               Submit Project

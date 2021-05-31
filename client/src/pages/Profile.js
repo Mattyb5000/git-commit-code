@@ -11,7 +11,8 @@ import DataTable from "react-data-table-component";
 
 const Profile = () => {
 	const [userProjects, setUserProjects] = useState([]);
-	// const [projects, setProjects] = useState([]);
+	const [clickedProjects, setClickedProjects] = useState({});
+	
 
 	// loads all projects and sets them to projects
 	useEffect(() => {
@@ -32,14 +33,16 @@ const Profile = () => {
 
 	var dataArray = userProjects;
 
-	 console.log(dataArray);
+	console.log(dataArray);
 
-	 const data = dataArray;
+	const data = dataArray;
 
 	const columns = [
+		
 		{
-			title: "Project Name",
+			name: "Project Name",
 			selector: "title",
+			sortable: true,
 			maxWidth: "250px",
 		},
 		{
@@ -48,6 +51,7 @@ const Profile = () => {
 			sortable: false,
 			maxWidth: "200px",
 		},
+		
 		{
 			name: "Language",
 			selector: "language",
@@ -56,24 +60,23 @@ const Profile = () => {
 		},
 	];
 
+	const handleChange = (state) => {
+		console.log("Selected Rows: ", state.selectedRows);
+		
+		//export title to Form
+		var projectId = state.selectedRows[0]._id;
+		console.log("project id is " + projectId);
+		var projectTitle = state.selectedRows[0].title;
+		console.log('project title is ' + projectTitle);
+		var project = state.selectedRows[0];
+		console.log(project);
+		setClickedProjects({...project});
+		
+		
+		//remove project from user's projects in progress
+	};
 
-	// const handleProjectBut = id => {
-	// function handleProjectBut(event) {
-	// const rowId = event.target.parentNode.parentNode.id;
-	// console.log(rowId);
-
-	// console.log("you clicked select button");
-	// const id = e.target.id;
-	// console.log(id);
-	// console.log(id);
-	// var title = this.closest("tr").find(".title").text();
-	// console.log(title);
-	// 	console.log("hello");
-	// }
-
-	const handleChange = () => {
-		console.log("hello");
-	}
+	console.log(clickedProjects);
 
 	return (
 		<div className="brick_background">
@@ -86,22 +89,54 @@ const Profile = () => {
 				<div className="col-12, col-md-12 ">
 					<DataTable
 						// className="table-bordered  projectTable w-100 table table-dark">
+						className="table-bordered projectTable w-100 table table-dark"
 						title="Projects In Progress"
 						columns={columns}
 						data={data}
-						className="container-fluid"
+						selectableRows
+						// // Clicked
 						onSelectedRowsChange={handleChange}
 					/>
-					
-					{/* <thead className="table-info table table-dark">
+				</div>
+
+				<div className="col-12, col-md-12"></div>
+			</div>
+
+			<ProjectForm clickedProj={clickedProjects} />
+
+			{/* <Chart /> */}
+		</div>
+	);
+};
+
+export default Profile;
+
+// const handleProjectBut = id => {
+// function handleProjectBut(event) {
+// const rowId = event.target.parentNode.parentNode.id;
+// console.log(rowId);
+
+// console.log("you clicked select button");
+// const id = e.target.id;
+// console.log(id);
+// console.log(id);
+// var title = this.closest("tr").find(".title").text();
+// console.log(title);
+// 	console.log("hello");
+// }
+
+{
+	/* <thead className="table-info table table-dark">
 						<tr>
 							<th scope="col">Project Name</th>
 							<th scope="col">Project Language</th>
 							<th scope="col">Project Link</th>
 							<th scope="col">Submit Completed Project</th>
 						</tr>
-					</thead> */}
-					{/* <tbody className="projectRow">
+					</thead> */
+}
+{
+	/* <tbody className="projectRow">
 						{userProjects.map((proj) => (
 							<tr key={proj._id}>
 								<td>{proj.title}</td>
@@ -120,21 +155,8 @@ const Profile = () => {
 								</td>
 							</tr>
 						))}
-					</tbody> */}
-				</div>
-
-				<div className="col-12, col-md-12"></div>
-			</div>
-
-			<ProjectForm />
-
-			{/* <Chart /> */}
-		</div>
-	);
-};
-
-export default Profile;
-
+					</tbody> */
+}
 // 	API.getProjects()
 // 		.then((res) => {
 // 			console.log(res.data);

@@ -17,6 +17,7 @@ router.route("/login").get(userController.findOne);
 //log out an existing user
 router.route("/logout").post(userController.destroy);
 
+
 module.exports = router;
 
 // .post("/login", ({body}, res) => {

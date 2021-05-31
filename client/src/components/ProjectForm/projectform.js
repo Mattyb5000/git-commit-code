@@ -1,6 +1,7 @@
 import React from "react";
 
 export function Input(props) {
+  const {title, language, _id} = props;
   return (
     <div className="form-group">
       <input className="form-control" {...props} />

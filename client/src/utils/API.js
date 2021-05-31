@@ -33,6 +33,7 @@ export default {
     return axios.get("/api/projectForms/" + id);
   },
   // Deletes the ProjectForm with the given id
+  
   deleteProjectForm: function(id) {
     return axios.delete("/api/projectForms/" + id);
   },
