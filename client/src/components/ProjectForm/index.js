@@ -11,9 +11,7 @@ import DeleteBtn from "../DeleteBtn";
 function ProjectForms(props) {
 	var proj = props.clickedProj;
 	const projId = proj._id;
-	console.log(projId);
 	const projTitle = proj.title;
-	console.log(projTitle);
 
 	// Setting our component's initial state
 	const [projectForms, setProjectForms] = useState([]);
