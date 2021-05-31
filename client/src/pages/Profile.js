@@ -102,7 +102,7 @@ const Profile = () => {
 
 			<ProjectForm clickedProj={clickedProjects} />
 
-			{/* <Chart /> */}
+			<Chart />
 		</div>
 	);
 };
