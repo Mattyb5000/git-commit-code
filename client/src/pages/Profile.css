@@ -1,4 +1,3 @@
-.brick {
-    background: url("whitebrick.jpg");
-    min-height: 1200px;
-  }
+.table {
+  justify-content: center;
+}
