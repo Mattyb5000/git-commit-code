@@ -2,129 +2,75 @@
 import { Bar } from "react-chartjs-2";
 import API from "../utils/API";
 import React, { Component, useState, useEffect } from "react";
-// import FakeUserAPI from "../utils/FakeUserAPI";
-
-const data = {
-    labels: ['JavaScript', 'Algorithms', 'React'],
-    datasets: [
-      {
-        label: 'In-progress',
-        // need to pull in-prog js, alg, react totals from DB
-        data: [12, 19, 2],
-        backgroundColor: 'rgb(255, 99, 132)',
-      },
-      {
-        label: 'Completed',
-         // need to pull completed js, alg, react totals from DB
-        data: [2, 3, 4],
-        backgroundColor: 'rgb(54, 162, 235)',
-      },
-    ],
-  };
-
 
 const Chart = () => {
-  // const [userProjectsInProgressJs, setUserProjectsInProgressJs] = useState([]);
-  // const [userProjectsCompleteJs, setUserProjectsCompleteJs] = useState([]);
-  // const [userProjectsInProgressReact, setUserProjectsInProgressReact] = useState([]);
-  // const [userProjectsCompleteReact, setUserProjectsCompleteReact] = useState([]);
-  // const [userProjectsInProgressAlg, setUserProjectsInProgressAlg] = useState([]);
-  // const [userProjectsCompleteAlg, setUserProjectsCompleteAlg] = useState([]);
+
+  const [projInProgressJs, setProjInProgressJs] = useState([]);
+  const [projCompleteJs, setProjCompleteJs] = useState([]);
+  const [projInProgressReact, setProjInProgressReact] = useState([]);
+  const [projCompleteReact, setProjCompleteReact] = useState([]);
+  const [projInProgressAlg, setProjInProgressAlg] = useState([]);
+  const [projCompleteAlg, setProjCompleteAlg] = useState([]);
   
   useEffect(() => {
 		loadUserProjects();
 	}, []);
 
-
     const loadUserProjects = () => {
       API.getUser()
         .then((res) => {
-          var userProjectsInProgressArray = res.data[0].projectsInProgress;
-          var userProjectsCompleteArray = res.data[0].projectsComplete;
-          var projInProgressJs = [];
-          var projInProgressJs = [];
-          var projInProgressReact = [];
-          var projInProgressAlg = [];
-          var projCompleteJs = [];
-          var projCompleteReact = [];
-          var projCompleteAlg = [];
+          var projInProgressArray = res.data[0].projectsInProgress;
+          var projCompleteArray = res.data[0].projectsComplete;
 
-          console.log(userProjectsInProgressArray);
-          console.log(userProjectsCompleteArray);
+          if (projInProgressArray) {
+                      
+            setProjInProgressJs(projInProgressArray.filter((jsProjInProgress) => jsProjInProgress.language === "Javascript"));
 
-          if (userProjectsInProgressArray) {
-            console.log(userProjectsInProgressArray[0].language);
-
-            for (i=0; i < userProjectsInProgressArray.length; i++) {
-              if (userProjectsInProgressArray[i].language === "Javascript") {
-                projInProgressJs.push(userProjectsInProgressArray[i]);
-                console.log(projInProgressJs);
-              };
-  
-            }};
+            setProjInProgressReact(projInProgressArray.filter((reactProjInProgress) => reactProjInProgress.language === "React"));
             
-        //   setUserProjectsInProgressJs(
-        //     userProjectsInProgressArray.filter((jsProjInProgress) => jsProjInProgress.language === "Javascript")
-        //   );
-        //   console.log(userProjectsInProgressJs);
-         
+            setProjInProgressAlg(projInProgressArray.filter((algProjInProgress) => algProjInProgress.language === "Algorithm"));
+            
+            } else {
+              alert('Please visit the project pages to add projects in progress.');
+            };
+            
+            if (projCompleteArray) {
+                      
+              setProjCompleteJs(projCompleteArray.filter((jsProjComplete) => jsProjComplete.language === "Javascript"));
+              
+              setProjCompleteReact(projCompleteArray.filter((reactProjComplete) => reactProjComplete.language === "React"));
+              
+            setProjCompleteAlg(projCompleteArray.filter((algProjComplete) => algProjComplete.language === "Algorithm"));
+              
+     } else {
+      alert('Please complete and submit projects to add to your projects completed chart!');
+    };
+  })};
 
-        //   setUserProjectsInProgressReact(
-        //     userProjectsInProgressArray.filter((ReactProjInProgress) => ReactProjInProgress.language === "React")
-        //     );
-        //   console.log(userProjectsInProgressReact);
+     const data = {
+      labels: ['JavaScript', 'Algorithms', 'React'],
+      datasets: [
+        {
+          label: 'In-progress',
+          // need to pull in-prog js, alg, react totals from DB
+      data: [projInProgressJs.length, projInProgressAlg.length, projInProgressReact.length ],
+          backgroundColor: 'rgb(255, 99, 132)',
+        },
+        {
+          label: 'Completed',
+           // need to pull completed js, alg, react totals from DB
+          data: [projCompleteJs.length, projCompleteAlg.length, projCompleteReact.length],
+          backgroundColor: 'rgb(54, 162, 235)',
+        },
+      ],
+    };
 
-        //   setUserProjectsInProgressAlg(
-        //     userProjectsInProgressArray.filter((AlgProjInProgress) =>
-        //     AlgProjInProgress.language === "Algorithm")
-        //   );
-        //   console.log(userProjectsInProgressAlg);
-        // };
-
-        // if (userProjectsCompleteArray) {
-        //   setUserProjectsCompleteJs(
-        //     userProjectsCompleteArray.filter((jsProjComplete) => jsProjComplete.language === "Javascript")
-        //   );
-        //   console.log(userProjectsCompleteJs);
-
-        //   setUserProjectsCompleteReact(
-        //     userProjectsCompleteArray.filter((ReactProjComplete) => ReactProjComplete.language === "React")
-        //     );
-        //     console.log(userProjectsCompleteReact);
-         
-        //   setUserProjectsCompleteAlg(
-        //     userProjectsCompleteArray.filter((AlgProjComplete) =>
-        //     AlgProjComplete.language === "Algorithm")
-        //   );
-        //   console.log(userProjectsCompleteAlg);
-        // };
-  
-        })
-        .catch((err) => console.log(err));
-      };
-    
-    // API.getUser().then((res) => {
-    //   console.log("array of user objects", res.data)
-    //   console.log("states' array contents", this.state)
-    //   // const projectsInProgress = res.data;
-    //   const totalCompleted = res.data[0].projectsComplete.length;
-    //   const totalInProg = res.data[0].projectsInProgress.length;
-    //   // const totalInProgJS = res.data[0].projectsInProgress.length;
-
-    //   console.log("total completed", totalCompleted)
-    //   console.log("total in progress", totalInProg)
-    
-    //   this.setState({
-    //     inProgress: totalInProg,
-    //     completed: totalCompleted,
-    //   })
-    // })
-  
+   
   
     return (
       <div className='container'>
         	<h5 className="pageTitle text-center pt-5">My progress</h5>
-          {/* <Bar data={data} /> */}
+          <Bar data={data} />
       </div>
     );
   
@@ -132,20 +78,3 @@ const Chart = () => {
 
 
 export default Chart;
-
-// addInProg = () => {
-    
-  // }
-  
-  // addCompleted = () => {
-
-  // }
-
-  // componentDidMount() {
-    // API.addUserProjectInProgress().then((res) => {
-    //   console.log("this", res.data)
-    // })
- // setUserProjects(res.data[0]);
-          // console.log(userProjectsArray);
-          // setUserProjects(userProjectsArray);
-          // console.log(userProjects);
