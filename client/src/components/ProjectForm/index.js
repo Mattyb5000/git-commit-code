@@ -41,16 +41,11 @@ function ProjectForms(props) {
 		const { name, value } = event.target;
 		setFormObject({ ...formObject, [name]: value });
 	}
-	//when submit button is clicked, project is added to user's completed project array
-
-	//when submit button is clicked, form clears
-
-	// When the form is submitted, use the API.saveprojectForm method to save the projectForm data
-	// Then reload ProjectForms from the database
+	
 	function handleFormSubmit(event) {
 		event.preventDefault();
 		if (formObject.username) {
-			console.log(projTitle);
+			
 			API.saveProjectForm({
 				_id: projId,
 				projectname: projTitle,
@@ -69,10 +64,6 @@ function ProjectForms(props) {
 		}
 	}
 
-	// function handleTitleChange(event) {
-	//   event.preventDefault();
-
-	// }
 	return (
 		<Container fluid>
 			<Row>

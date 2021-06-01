@@ -59,22 +59,14 @@ const Profile = () => {
 	];
 
 	const handleChange = (state) => {
-		console.log("Selected Rows: ", state.selectedRows);
-		
 		//export title to Form
 		var projectId = state.selectedRows[0]._id;
-		console.log("project id is " + projectId);
 		var projectTitle = state.selectedRows[0].title;
-		console.log('project title is ' + projectTitle);
 		var project = state.selectedRows[0];
-		console.log(project);
 		setClickedProjects({...project});
-		
 		
 		//remove project from user's projects in progress
 	};
-
-	console.log(clickedProjects);
 
 	return (
 		<div className="brick_background">

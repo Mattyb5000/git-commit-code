@@ -49,7 +49,7 @@ export default {
   },
   // Saves a ProjectForm to the database
   saveProjectForm: function(projectFormData) {
-    return axios.post("/api/projectForms", projectFormData);
+    return axios.post("/api/projectForms/", projectFormData);
   }
 };
 
