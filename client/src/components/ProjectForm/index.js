@@ -8,7 +8,7 @@ import DeleteBtn from "../DeleteBtn";
 
 //when project is clicked, it's removed from the user's projects in progress
 
-function ProjectForms(props) {
+function ProjectForm(props) {
 	var proj = props.clickedProj;
 	const projId = proj._id;
 	const projTitle = proj.title;
@@ -123,4 +123,4 @@ function ProjectForms(props) {
 	);
 }
 
-export default ProjectForms;
+export default ProjectForm;

@@ -14,29 +14,25 @@ export default {
   deleteProject: function(id) {
     return axios.delete("/api/projects/" + id);
   },
-
+//deletes project in progress
   deleteProjectInProgress: function(id) {
     return axios.delete("/api/users/" + id);
   },
-
+//gets a single user
   getUser: function() {
-    return axios.get("/api/users/get-user");
+    return axios.get("/api/users/get-user/");
   },
-
+//adds a user project in progress
   addUserProjectInProgress: function(id) {
-    alert('you are in addUserProjectInProgress api route');
-    return axios.put("/api/users/new-project", {id});
+    return axios.put("/api/users/new-project/", {id});
   },
-
+//adds a user completed project
   addUserCompletedProject: function(id) {
-    alert('you are in addUserProjectInProgress api route');
     return axios.put("/api/users/completed-project", id);
   },
-
-  //**** Add /remove (project in progress) */
-
+//gets project forms
   getProjectForms: function() {
-    return axios.get("/api/projectForms");
+    return axios.get("/api/projectForms/");
   },
   // Gets the ProjectForm with the given id
   getProjectForm: function(id) {
@@ -52,9 +48,3 @@ export default {
     return axios.post("/api/projectForms/", projectFormData);
   }
 };
-
-  // Saves a project to the database
-  // saveProject: function(projectData) {
-  //   return axios.post("/api/projects", projectData);
-  // },
-  //add user functions here

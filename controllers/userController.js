@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const db = require("../models");
-const { findOne } = require("../models/project");
-const { find } = require("../models/project");
 
 
 module.exports = {
@@ -32,10 +30,7 @@ module.exports = {
 	},
 
 	updateCompletedProject:  function (req, res) {
-		debugger;
-		console.log(req.body.id);
 		db.User.findOneAndUpdate(
-			
 			{ _id: req.session.user_id },
 			{ $push: { projectsComplete: req.body.id } },
 			{ new: true }
@@ -43,6 +38,7 @@ module.exports = {
 			.then((dbProject) => {
 				console.log(dbProject);
 				res.json(dbProject);
+				alert("project added to completed projects");
 			})
 		
 			.catch((err) => {
@@ -52,7 +48,6 @@ module.exports = {
 	},
 
 	findById: async function (id) {
-		alert("you are in api findById user route");
 		db.User.findOne({
 			where: {
 				_id: id
