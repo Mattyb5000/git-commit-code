@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Login.css";
 import Navbar2 from "../Navbar2/Navbar2";
 import Axios from "axios";
-// import { findOne } from "../../../../models/project";
 
 function Login() {
   // use state for login and signup functionality
