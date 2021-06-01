@@ -17,7 +17,7 @@ const Chart = () => {
 	const loadUserProjects = () => {
 		API.getUser().then((res) => {
 			console.log(res.data[0].projectsInProgress);
-			console.log(res.data[0].projectsComplete);
+			console.log("comp", res.data[0].projectsComplete);
 
 			var projInProgressArray = res.data[0].projectsInProgress;
 			var projCompleteArray = res.data[0].projectsComplete;
@@ -94,7 +94,7 @@ const Chart = () => {
 	};
 
 	return (
-		<div className="container">
+		<div className="container chart">
 			<h5 className="pageTitle text-center pt-5">My progress</h5>
 			<Bar data={data} />
 		</div>

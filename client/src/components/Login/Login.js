@@ -60,7 +60,7 @@ function Login() {
   return (
     <div className="brick_background">
       <Navbar2 />
-      <div className="container col-9-sm animate__animated animate__fadeIn">
+      <div className="container login col-9-sm animate__animated animate__fadeIn">
         <div className="row ">
           {/* Signup */}
           <div className="form col-6 text-center">

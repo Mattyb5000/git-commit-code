@@ -7,7 +7,7 @@ function About() {
   return (
     <div className="brick_background">
     <Navbar1/>
-    <div className="container text-center">
+    <div className="container about text-center">
       <div className="about animate__animated animate__fadeIn  p-3 mb-2 bg-transparent text-dark">
         <h2>Why we developed Git.Commit</h2>
         <div>
@@ -21,7 +21,7 @@ function About() {
         </div>
         <div>
           <p>
-            Git.Commit is created by coding bootcamp grads for coding bootcamp
+            Git.Commit was created by coding bootcamp grads for coding bootcamp
             grads to help you stay motivated and track your progress. Git.Commit
             provides practice projects and coding challenges so you can continue
             to sharpen your newly acquired skills, build your portfolio, and

@@ -4,7 +4,12 @@
   min-width: 1500px;
 }
 
-.container {
+.chart {
+  background-color: rgb(245, 245, 245, 0.85);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.login {
   background-color: rgb(245, 245, 245, 0.85);
   margin-top: 50px;
   margin-bottom: 50px;
