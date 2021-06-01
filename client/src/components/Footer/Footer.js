@@ -5,13 +5,14 @@ function Footer() {
   return (
     <div className="footer">
       <div>
-        <p>some stuff</p>
+        <h3>From the team that brought you HomeRoutes!</h3>
       </div>
       <div>
-        <p>Connect with us!</p>
+        <h3>Connect with us!</h3>
+
       </div>
       <div>
-        <p>some other stuff</p>
+        <h3>P.W.A 2021</h3>
       </div>
     </div>
   );
