@@ -5,14 +5,15 @@ function Footer() {
   return (
     <div className="footer">
       <div>
-        <h3>From the team that brought you HomeRoutes!</h3>
+        <p>From the team that brought you <a href="https://salty-hamlet-13390.herokuapp.com/property" target="_blank"
+                    >HomeRoute!</a></p>
       </div>
       <div>
-        <h3>Connect with us!</h3>
+        <p>P.W.A 2021</p>
 
       </div>
       <div>
-        <h3>P.W.A 2021</h3>
+        <p><a href="https://linktr.ee/mattyb_5000" target="_blank">Connect with us!</a></p>
       </div>
     </div>
   );

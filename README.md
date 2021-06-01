@@ -42,9 +42,9 @@ Begin by creating a profile.
 
 ## Selecting Projects
 
-Once logged in, you can navigate to your profile and from the "Projects" drop down menu in the navigation bar you can choose to view projects by language or coding algorithm challenges. Choosing a project will navigate you to a description of the project that you can do from a code editor of your choice. Once completed, submit your project. 
+Once logged in, you can navigate to projects tab in the nav bar and from the drop down menu, you can choose to view projects by language or coding algorithm challenges. Clicking "click here for link" will navigate you to the project description. Click "Select Project" to add the project to your "in progress" queue in your profile.
 
-![choose a project]()
+![choose a project](projects.gif)
 
 ---
 
@@ -52,9 +52,7 @@ Once logged in, you can navigate to your profile and from the "Projects" drop do
 
 ## Navigating Your Profile
 
-Your profile will display in-progress projects, completed projects, and your progress displayed in bar graph form. Each project or coding challenge you submit as completed will add one to the count on the graph. This gives you a visual representation of how much effort you have put into each category. 
-
-![progress]()
+Your profile will display in-progress projects, completed projects, and your progress displayed in bar graph form. As you add projects to your queue and submit completed projects, the graph will track your progress by category so you can measure your efforts. 
 
 ---
 
